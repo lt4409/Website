@@ -30,6 +30,42 @@
             display: flex;
             justify-content: center;
         }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        #Texel-vlag {
+            grid-area: 1/1/2/2;
+            width: 30rem;
+            height: 20rem;
+        }
+
+        #Texel-kaart {
+            grid-area: 1/2/3/3;
+            width: 30rem;
+            height: 40rem;
+        }
+
+        #fotos-huisjes {
+            grid-area: 2/1/3/2;
+            width: 30rem;
+            height: 20rem;
+        }
+
+        #informatie-aanvraag {
+            grid-area: 1/3/2/4;
+            width: 30rem;
+            height: 20rem;
+        }
+
+        #fotos-Texel {
+            grid-area: 2/3/3/4;
+            width: 30rem;
+            height: 20rem;
+        }
     </style>
 </head>
 <body>
@@ -43,15 +79,15 @@
     <h1>Recreja Texel</h1>
 
     <div class="grid-container">
-        <img src="foto's/Texel-vlag.svg" alt="Foto van de vlag van Texel. De vlag bestaat uit twee gelijke horizantale strepen waarvan de bovenste groen en de onderste zwart is.">
-        <img src="foto's/Texel-kaart.jpeg" alt="Foto van Texel waar met een rode stip aangegeven is waar de accommodaties zich bevinden op het eiland.">
-        <div>
+        <img id="Texel-vlag" src="foto's/Texel-vlag.svg" alt="Foto van de vlag van Texel. De vlag bestaat uit twee gelijke horizantale strepen waarvan de bovenste groen en de onderste zwart is.">
+        <img id="Texel-kaart" src="foto's/Texel-kaart.jpeg" alt="Foto van Texel waar met een rode stip aangegeven is waar de accommodaties zich bevinden op het eiland.">
+        <div id="fotos-huisjes">
             <img src="foto's/tuin.jpg" alt="Foto van chalet.">
         </div>
-        <div>
+        <div id="informatie-aanvraag">
             <h2>info aanvraag</h2>
         </div>
-        <div>
+        <div id="fotos-Texel">
             <img src="foto's/strand-vuurtoren-texel.jpeg" alt="Foto van het strand van texel met rechts in de hoek de rode vuurtoren van Texel.">
         </div>
     </div>
