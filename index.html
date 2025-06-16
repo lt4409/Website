@@ -25,6 +25,14 @@
             z-index: 1000;
         }
 
+        .accommedaties {
+            display: none;
+        } 
+
+        .underheader {
+            width: 100%;
+        }
+
         a {
             text-decoration: none;
             color: white;
@@ -136,13 +144,15 @@
 </head>
 <body>
     <div class="menubalk">
-        <div>
-            <a href="Pages/Accommedaties.html">Accommedaties</a>
-            <ol>
-                <li>Appartement</li>
-                <li>Bungalow</li>
-                <li>Chalet</li>
-            </ol>
+        <div class="accommedatie-container">
+            <a class="accommedatie">Accommedaties</a>
+            <div class="underheader">
+                <ol class="accommedaties">
+                    <li>Appartement</li>
+                    <li>Bungalow</li>
+                    <li>Chalet</li>
+                </ol>
+            </div>
         </div>
         <a href="Pages/Meer_over_recreja.html">Meer over Recreja</a>
         <a href="Pages/Veel_gestelde_vragen.html">Veel gestelde vragen</a>
@@ -168,6 +178,19 @@
         </div>
     </div>
     <script>
+        let accommedatieContainer = document.getElementsByClassName("accommedatie-container")[0]
+        let accommedatie = document.getElementsByClassName("accommedatie")[0];
+        let accommedaties = document.getElementsByClassName("accommedaties")[0];
+
+        accommedatieContainer.addEventListener('mouseover', () => {
+            accommedaties.style.display = "block";
+        })
+
+        accommedatieContainer.addEventListener('mouseout', () => {
+            accommedaties.style.display = "none";
+        })
+
+
         let slideIndex = 1;
         let slideTimer;
 
