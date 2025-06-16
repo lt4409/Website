@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #d7e4d1;
+            margin: 0;
+            display: flex; 
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow-y: auto;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            display: flex;
+            border-radius: 10px;
+            box-sizing: border-box;
+            padding: 40px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            border-top: 20px solid rgb(102, 119, 97);
+
+        }
+
+        input {
+            margin-bottom: 15px;
+            padding: 5px;
+            border-radius: 5px;
+            width: auto;
+            cursor: pointer;
+        }
+
+        .required {
+            color: red;
+        }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #e8d7b9;
+            color: white;
+            padding-top: 40px;
+            padding-bottom: 3px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .way-back {
+            text-align: left;
+            font-size: 17px;
+            padding-left: 15px;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p class="way-back">Home > Chalet</p>
+    </div>
+    <h1>Informatie aanvraag</h1>
+    <form action="https://formsubmit.co/tjoaatf@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Informatie aanvraag">
+        <input type="hidden" name="_autoresponse" value="Uw formulier is verzonden. Hier is een kopie van uw antwoorden.">
+        <fieldset>
+            <legend>Persoonlijke informatie</legend>
+            <label id="name"><span class="required">*</span>Naam:</label>
+            <input name="naam" type="text" id="name" required>
+            <label for="email-adress"><span class="required">*</span>Email adres:</label>
+            <input name="email" type="email" id="email-adress" required>
+       
+
+            <label for="selecter"><span class="required">*</span>Telefoonnummer:</label>
+            <div class="telephone-container">
+               <select name="land_telefoonnummer" id="selecter">
+                  <option value="Nederland (+31)" selected>(Nederland) +31</option>
+                  <option value="Duitsland (+49)">(Duitsland) +49</option>
+                  <option value="België (+32)">(België) +32</option>
+                  <option value="Verenigd Koninkrijk (+44)">(Verenigd Koninkrijk) +44</option>
+               </select>
+               <input name="telefoonnummer" type="tel" id="telephone-number">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><span class="required">*</span>Periode waarvoor belangstelling</legend>
+            <label for="start-date">Begindatum:</label>
+            <input name="begindatum" type="date" id="start-date">
+            <label for="end-date">Einddatum:</label>
+            <input name="einddatum" type="date" id="end-date">
+            <input name="nog_onbekend" type="checkbox" id="unknown" value="ja">
+            <label for="unknown">Nog onbekend</label>
+        </fieldset>
+
+        <label for="ammount"><span class="required">*</span>Aantal personen:</label>
+        <input name="aantal personen" type="number" id="ammount" min="1" max="6">
+
+        <label for="subject"><span class="required">*</span>Onderwerp:</label>
+        <input name="onderwerp" type="text" id="subject">
+
+        <label for="text-box"><span class="required">*</span>Vraag:</label>
+        <textarea  name="vraag" rows="6" id="text-box" maxlength="400"></textarea>
+
+        <button type="submit">Verzenden</button>
+    </form>
+    
+</body>
+</html>
