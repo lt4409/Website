@@ -37,10 +37,11 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(3, 30rem);
-            grid-template-rows: 20rem 20rem;
+            grid-template-columns: repeat(3, 27.8rem);
+            grid-template-rows: 21rem 21rem;
             gap: 1rem;
             padding: 1rem;
+            width: 100%;
             justify-content: center;
         }
 
@@ -77,14 +78,30 @@
             grid-area: 1/3/2/4;
         }
 
-        #informatie-aanvraag a {
+        #informatie-aanvraag-container {
             width: 100%;
             height: 100%;
+            color: black;
+            font-size: 2.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: black;
-            font-size: 2.5rem;
+        }
+
+        #informatie-aanvraag {
+            border: none;
+            background-color: #0077cc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 27.8rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        #informatie-aanvraag:hover {
+            background-color: #005fa3;
+            transform: translateY(-2px);
         }
 
         #fotos-Texel {
@@ -119,7 +136,14 @@
 </head>
 <body>
     <div class="menubalk">
-        <a href="Pages/Accommedaties.html">Accommedaties</a>
+        <div>
+            <a href="Pages/Accommedaties.html">Accommedaties</a>
+            <ol>
+                <li>Appartement</li>
+                <li>Bungalow</li>
+                <li>Chalet</li>
+            </ol>
+        </div>
         <a href="Pages/Meer_over_recreja.html">Meer over Recreja</a>
         <a href="Pages/Veel_gestelde_vragen.html">Veel gestelde vragen</a>
         <a href="Pages/Texel_informatie.html">Texel informatie</a>
@@ -133,8 +157,8 @@
         <div id="fotos-huisjes">
             <img src="foto's/tuin.jpg" alt="Foto van chalet.">
         </div>
-        <div id="informatie-aanvraag">
-            <a href="Pages/informatie-form.html">Informatie aanvraag</a>
+        <div id="informatie-aanvraag-container">
+            <a id="informatie-aanvraag" href="Pages/informatie-form.html">&#x279C Informatie aanvraag</a>
         </div>
         <div id="fotos-Texel">
             <img class="mySlides" src="foto's/strand-vuurtoren-texel.jpeg" alt="Foto van het strand van texel met rechts in de hoek de rode vuurtoren van Texel.">
