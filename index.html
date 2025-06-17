@@ -84,6 +84,7 @@
 
         #fotos-huisjes {
             grid-area: 2/1/3/2;
+            position: relative;
         }
 
         #fotos-huisjes img {
@@ -127,7 +128,7 @@
             position: relative;
         }
 
-        .mySlides {
+        .mySlides1, .mySlides2 {
             display: none;
         }
         .prev, .next {
@@ -175,17 +176,20 @@
         <img id="Texel-vlag" src="foto's/Texel-vlag.svg" alt="Foto van de vlag van Texel. De vlag bestaat uit twee gelijke horizantale strepen waarvan de bovenste groen en de onderste zwart is.">
         <img id="Texel-kaart" src="foto's/Texel-kaart.jpeg" alt="Foto van Texel waar met een rode stip aangegeven is waar de accommodaties zich bevinden op het eiland.">
         <div id="fotos-huisjes">
-            <a href="Pages/Chalet.html"><img src="foto's/tuin.jpg" alt="Foto van chalet." ></a>
+            <a class="mySlides1" href="Pages/Chalet.html"><img src="foto's/tuin.jpg" alt="Foto van chalet met de tuin." ></a>
+            <a class="mySlides1" href=""><img src="foto's/parkeerplaats.jpg" alt="Foto van Chalet met parkeerplaats."></a>
+            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
         </div>
         <div id="informatie-aanvraag-container">
             <a id="informatie-aanvraag" href="Pages/informatie-form.html">Informatie aanvraag</a>
             <i class="material-icons" style="font-size:100px">mail_outline</i>
         </div>
         <div id="fotos-Texel">
-            <img class="mySlides" src="foto's/strand-vuurtoren-texel.jpeg" alt="Foto van het strand van texel met rechts in de hoek de rode vuurtoren van Texel.">
-            <img class="mySlides" src="foto's/Veerboot.jpeg" alt="Foto van de veerboot van Texel die op Texel aankomt.">
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <img class="mySlides2" src="foto's/strand-vuurtoren-texel.jpeg" alt="Foto van het strand van texel met rechts in de hoek de rode vuurtoren van Texel.">
+            <img class="mySlides2" src="foto's/Veerboot.jpeg" alt="Foto van de veerboot van Texel die op Texel aankomt.">
+            <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
         </div>
     </div>
     <script>
@@ -202,35 +206,44 @@
         })
 
 
-        let slideIndex = 1;
+        let slideIndex = [1, 1];
+        let slideId = ["mySlides1", "mySlides2"];
         let slideTimer;
 
-        function showSlides(n) {
-            const slides = document.getElementsByClassName("mySlides");
-            if (n > slides.length) slideIndex = 1;
-            if (n < 1) slideIndex = slides.length;
+        function showSlides(n, no) {
+            let allSlides = [
+                document.getElementsByClassName("mySlides1"),
+                document.getElementsByClassName("mySlides2")
+            ];
+
+            let slides = allSlides[no];
+
+            if (n > slides.length) slideIndex[no] = 1;
+            if (n < 1) slideIndex[no] = slides.length;
 
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-            slides[slideIndex-1].style.display = "block";
-    
+            slides[slideIndex[no] - 1].style.display = "block";
         }
 
-        function plusSlides(n) {
+        function plusSlides(n, no) {
             clearTimeout(slideTimer);
-            slideIndex += n;
-            showSlides(slideIndex);
+            slideIndex[no] += n;
+            showSlides(slideIndex[no], no);
         }
 
         function autoSlides() {
-            slideIndex++;
-            showSlides(slideIndex);
+            for (let i = 0; i < slideId.length; i++) {
+                slideIndex[i]++;
+                showSlides(slideIndex[i], i);
+            }
             slideTimer = setTimeout(autoSlides, 2000);
         }
 
-        showSlides(slideIndex);
         autoSlides();
+        showSlides(1, 0);
+        showSlides(1, 1);
     </script>
     
 </body>
