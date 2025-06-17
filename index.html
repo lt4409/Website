@@ -230,7 +230,7 @@
 
         let slideIndex = [1, 1];
         let slideId = ["mySlides1", "mySlides2"];
-        let slideTimer;
+        let slideTimers = [null, null];
 
         function showSlides(n, no) {
             let allSlides = [
@@ -250,22 +250,21 @@
         }
 
         function plusSlides(n, no) {
-            clearTimeout(slideTimer);
+            clearTimeout(slideTimers[no]);
             slideIndex[no] += n;
             showSlides(slideIndex[no], no);
         }
 
-        function autoSlides() {
-            for (let i = 0; i < slideId.length; i++) {
-                slideIndex[i]++;
-                showSlides(slideIndex[i], i);
-            }
-            slideTimer = setTimeout(autoSlides, 2000);
+        function autoSlides(no) {
+            slideIndex[no]++;
+            showSlides(slideIndex[no], no);
+            slideTimers[no] = setTimeout(() => autoSlides(no), 2000);
         }
 
-        autoSlides();
         showSlides(1, 0);
         showSlides(1, 1);
+        autoSlides(0);
+        autoSlides(1);
     </script>
     
 </body>
