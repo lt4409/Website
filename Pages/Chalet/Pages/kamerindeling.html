@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamer indeling</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background-color: #f9fafb;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            background-color: #2C2C38;
+            width: 100%;
+            color: white;
+            padding-top: 40px;
+            padding-bottom: 3px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .way-back {
+            text-align: left;
+            font-size: 17px;
+            padding-left: 15px;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        img {
+            width: 300px;
+            height: 280px;
+            border-radius: 3px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);   
+        }
+
+        .photos-container {
+            display: flex;
+            gap: 15px;
+            margin-left: 50px;
+        }
+
+        li {
+            background-color: white;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        li:hover {
+            transform: scale(1.02);
+            transition: 0.3s ease-in-out;
+        }
+
+        .content-container {
+            margin: 10px;
+            padding: 20px;
+        }
+
+        hr {
+            width: 3rem; 
+            border: 1px solid #b2afaf; 
+            margin-left: 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            align-items: left;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p class="way-back">Home > Chalet</p>
+    </div>
+    <h1>Kamer indeling</h1>
+    <div class="content-container">
+        <ul> 
+            <li>
+                <div class="text-container">
+                    <h2>Woonkamer</h2>
+                    <hr>
+                    <p>Gezellige woonkamer met open keuken en schuifdeuren naar de tuin.</p>
+                </div>
+                <div class="photos-container">
+                    <img src="fotos_chalet/woonkamer.jpeg" alt="Woonkamer met aan de linkerkant een zwarte bank, in het midden een grijze tafel en aan de rechterkant een tv. ">
+                    <img src="fotos_chalet/woonkamer-twee.jpeg" alt="Woonkamer met aan de linkerkant een zwarte bank, in het midden een grijze tafel en aan de rechterkant een tv. ">
+                </div>
+            </li>
+            <li>
+                <div class="text-container">
+                    <h2>Slaapkamers</h2>
+                    <hr>
+                    <p>Slaapkamer met tweepersoonsbed.</p>
+                    <p>Slaakamer met twee eenpersoonsbedden.</p>
+                </div>
+                <div class="photos-container">
+                    <img src="fotos_chalet/hoofdslaapkamer.jpg" alt="Houten tweepersoonsbed met houten opbergruimte en kasten.">
+                    <img src="fotos_chalet/tweede-slaapkamer.jpg" alt="Kamer met twee eenpersoonsbedden met in het midden van de gele muren is een raam.">
+                </div>
+            </li>
+            <li>
+                <div class="text-container">
+                    <h2>Keuken</h2>
+                    <hr>
+                    <p>Open keuken met 4 pits gasfornuis, vaatwasser, magnetron en een ijskast met vriesvak.</p>
+                    <h2>Badkamer</h2>
+                    <hr>
+                    <p>Badkamer met douche, wastafel en toilet.</p>
+                </div>
+                <div class="photos-container">
+                    <img src="fotos_chalet/keuken.jpeg" alt="Open keuken met 4 pits gasfornuis, vaatwasser, magnetron en een ijskast met vriesvak.">
+                    <img src="fotos_chalet/badkamer.jpg" alt="Badkamer met linksonder een toilet links boven een instapdouche en rechts een wasbak met spiegel.">
+                </div>
+            </li>
+            <li>
+                <div class="text-container">
+                    <h2>Tuin en parkeerplaats</h2>
+                    <hr>
+                    <p>Tuin met zonnig gelegen terras met ruime tafel en lounge set.</p>
+                    <p>Parkeerplaats op eigen terrein, direct naast chalet.</p>
+                </div>
+                <div class="photos-container">
+                    <img src="fotos_chalet/tuin.jpg" alt="Tuin met zonnig gelegen terras met ruime tafel en lounge set.">
+                    <img src="fotos_chalet/parkeerplaats.jpg" alt="Parkeerplaats op eigen terrein, direct naast chalet.">
+                </div>
+            </li>
+        </ul>
+    </div> 
+</body>
+</html>

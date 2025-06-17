@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Algemene informatie</title>
+    <style>
+        ::-webkit-scrollbar {
+             width: 10px;
+            }
+        
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888; 
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+
+        body {
+            margin: 0;
+            background-color: white;
+            font-family: 'Poppins', sans-serif;
+            overflow-y: scroll;
+            
+        }
+
+        .header {
+            background-color: #1d1e2c;
+            width: 100%;
+            color: white;
+            padding-top: 40px;
+            padding-bottom: 3px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .way-back {
+            text-align: left;
+            font-size: 17px;
+            padding-left: 15px;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .faq {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            padding-bottom: 1rem;
+            display: flex;
+            gap: 3.5rem;
+            cursor: pointer;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        section {
+            width: 90%;
+            margin: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            border: 2px solid lightgray;
+            border-radius: 20px;
+            padding: 0.5rem;
+        }
+
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        .question h2 {
+            font-size: 1.5rem;
+        }
+
+        .answer p {
+            line-height: 1.2;
+            font-size: 1.0rem;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 1s ease;    
+            margin-top: 0;    
+        }
+
+        section.active .answer {
+            max-height: 500px;
+            margin-top: 0;
+        }
+
+        section.active svg {
+            transform: rotate(180deg);
+        }
+
+        svg {
+            transition: transform 0.5s ease-in;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p class="way-back">Home > Chalet</p>
+    </div>
+    <h1>Algemene informatie</h1>
+    <div class="faq">
+        <div class="column">
+            <section>
+                    <div class="question">
+                        <h2>Aankomst- en vertrektijd</h2>
+                        <svg width="15" height="10" viewBox="0 0 42 25">
+                            <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="answer">
+                        <p>De aankomsttijd is vanaf 15:00 uur. De vertrektijd is tot 10:00.</p>
+                    </div>
+            </section>
+            <section>
+                <div class="question">
+                    <h2>Huisdieren en roken</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>Huisdieren zijn niet toegestaan. Roken is niet toegestaan.</p>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <h2>Borg</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>Er is geen borg.</p>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <h2>Adres</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>Vakantiepark De Krim, Roggeslootweg 6</p>
+                    <p>1795 JV De Cocksdorp, Texel</p>
+                    <p>Telefoonnummer receptie: +31(0)222-327357</p>
+                    <p>Jaarplaats 168</p>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <h2>Sleutel en zwembadkaarten</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>De sleutel en zwembadkaarten kunt u ophalen bij de receptie (voor openingstijden zie de website van het vakantiepark De Krim). Bij vertrek dient u de sleutel ook weer in te leveren bij de receptie.</p>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <h2>Vertrek</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>Het huisje moet bij vertrek <strong>netjes</strong> worden achtergelaten en de vuilniszakken naar de centrale afvalplek gebracht worden. Deze mogen beslist niet bij het huisje achterblijven (i.v.m. ongedierte en vogels). Een schoonmaakbedrijf zorgt voor de eindschoonmaak. Wel dient de vaatwasser leeg te zijn gehaald. Bij eventuele extra werkzaamheden door het schoonmaakbedrijf zullen kosten in rekening worden gebracht. Mocht er onverhoopt iets kapot zijn gegaan, dan dit graag even bij ons melden.</p>
+                    <p> Bij definitief vertrek de thermostaat graag op <strong>10 graden</strong> zetten, ook de temperatuur in de koelkast uitzetten en alle ramen en deuren goed afsluiten (waaronder ook de schuur).</p>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <h2>Linnengoed</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>Linnengoed (lakens, keuken handdoeken, theedoeken) dient u zelf mee te nemen. Wij kunnen helaas geen linnen service / verhuur bieden. Het 2-persoonsbed is 140 x 200 met een 2-persoonmatras met of 2 losse eenpersoons dekbedden, of een tweepersoonsdekbed (ligt in de kast in de slaapkamer). De eenpersoonsbedden zijn 90 x 200.</p>
+                </div>
+            </section>
+        </div>
+        <div class="column">
+            <section>
+                <div class="question">
+                    <h2>Schoonmaken</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>Eindschoonmaak is verplicht. Voor de kosten hiervan zie prijzen</p> <!--Link toevoegen naar prijzenlijst-->
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <h2>Toeristenbelasting</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>De huurprijs is exclusief toeristenbelasting. Voor tarieven zie prijzen. Deze toeristenbelasting dient u aan ons (verhuurder) te betalen, waarna wij deze periodiek afdragen aan de gemeente Texel.</p> <!--Link toevoegen naar prijzenlijst-->
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <h2>Fietsen</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>Er zijn 3 standaard fietsen (2 heren, 1 dames) beschikbaar in de berging / schuur waar u gebruik van kunt maken. Extra of andere fietsen kunt u ter plaatse huren.</p>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <h2>Speelgoed</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>In de berging / schuur is divers buitenspeelgoed aanwezig. Hiervan kunnen de kinderen gebruik maken.</p>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <h2>Eigen terrein</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>Woonoppervlakte is 50 m2, totale oppervlakte 140m2 met eigen parkeeplaats direct naast het chalet.</p>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <h2>Keuken</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>In de keuken is een waterkoker, filter koffieapparaat alsmede een Senseo apparaat aanwezig. Tevens is er een vaatwasser en een magnetron alsmede een koelkast met vriesvak aanwezig,</p>
+                </div>
+            </section>
+            <section>
+                <div class="question">
+                    <h2>Wasmachine</h2>
+                    <svg width="15" height="10" viewBox="0 0 42 25">
+                        <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="answer">
+                    <p>In de berging / schuur staat een wasmachine waar u gebruik van kunt maken.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div>Page chalet</div> <!--Link naar home pagina Chalet.-->
+    <script>
+        const faqs = document.querySelectorAll("section"); 
+
+        faqs.forEach( faq => {
+            faq.addEventListener("click", function() {
+                this.classList.toggle("active"); 
+            })
+        });
+    </script>
+</body>
+</html>

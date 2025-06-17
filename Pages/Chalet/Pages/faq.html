@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Veel getselde vragen</title>
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .header {
+            background-color: #1d1e2c;
+            width: 100%;
+            color: white;
+            padding-top: 40px;
+            padding-bottom: 3px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .way-back {
+            text-align: left;
+            font-size: 17px;
+            padding-left: 15px;
+            font-weight: bold;
+        }
+
+        h1 {
+            padding-top: 50px;
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        .faq {
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 2rem;
+            padding-bottom: 1rem;
+            cursor: pointer;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        section {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            border-bottom: 2px solid black;
+        }
+
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        .question h2 {
+            font-size: 1.5rem;
+        }
+
+        .answer p {
+            line-height: 1.6;
+            font-size: 1.2rem;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 1s ease;    
+            margin-top: 0;    
+        }
+
+        section.active .answer {
+            max-height: 300px;
+            margin-top: 0;
+        }
+
+        section.active svg {
+            transform: rotate(180deg);
+        }
+
+        svg {
+            transition: transform 0.5s ease-in;
+        }
+
+        .onderschrift {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    </style>    
+</head>
+<body>
+    <div class="header">
+        <p class="way-back">Home > Chalet</p>
+    </div>
+    <h1>Veel gestelde vragen</h1>
+    <div class="faq">
+        <section>
+            <div class="question">
+                <h2>Wat zijn de in- en uitcheck tijden?</h2>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Inchecken is vanaf 15.00 uur, uitchecken is voor 10.00 uur. Let op: deze tijden kunnen afwijken van de tijden die genoemd worden in de mailing vanuit De Krim. In dat geval gelden dus de hierboven genoemde tijden. In rustige perioden zijn <strong>in overleg soms</strong> andere tijden mogelijk. Datzelfde geldt voor de wisseldagen. U bent uiteraard al eerder welkom om u aan te melden bij de receptie en vast gebruik te maken van de faciliteiten op het vakantiepark. Ook op uw vertrekdag kunt u nog gebruik maken van de park faciliteiten.</p>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <h2>Zijn huisdieren toegestaan?</h2>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                     <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Huisdieren zijn helaas niet toegestaan. Hierop zijn geen uitzonderingen mogelijk.</p>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <h2>Zijn er bed- en keukenlinnen?</h2>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Nee, wij hebben helaas geen linnen service (dus zelf meenemen).</p>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <h2>Is er een parkeerplaats bij het chalet?</h2>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Direct naast het chalet is ruimte waar u uw auto kunt parkeren.</p>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <h2>Waar kan je de sleutel en zwembadkaarten ophalen?</h2>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Beiden kunt u ophalen bij de receptie. Daar levert u de sleutel ook weer in bij vertrek. De actuele openingstijden van de receptie zijn te vinden op de website van vakantiepark De Krim.</p>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <h2>Is er wifi in het chalet?</h2>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Er is gratis wifi beschikbaar. Na selecteren van 'DK168' bent u automatisch verbonden (geen wachtwoord nodig).</p>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <h2>Is er een wasmachine?</h2>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>In de berging / schuur staat een wasmachine waar u gebruik van kunt maken.</p>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <h2>Hoe vindt de betaling plaats?</h2>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Betaling vindt niet via de website plaats. U ontvangt hiervoor een verzoek per email.</p>
+            </div>
+        </section>
+    </div>
+    <div class="onderschrift">Voor meer algemene informatie over Texel zelf zie Texelinformatie.</div>
+    <script>
+        const faqs = document.querySelectorAll("section"); 
+
+        faqs.forEach( faq => {
+            faq.addEventListener("click", function() {
+                this.classList.toggle("active"); 
+            })
+        });
+    </script>
+</body>
+</html>
