@@ -47,9 +47,21 @@
             color: white;
         }
 
+        #title {
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
         h1 {
             display: flex;
             justify-content: center;
+            font-size: 80px;
+            margin-bottom: 0.2rem;
+        }
+
+        hr {
+            width: 40rem;
+            margin-top: 0.2rem;
         }
 
         .grid-container {
@@ -192,14 +204,17 @@
         <a href="Pages/Texel_informatie.html">Texel informatie</a>
     </div>
 
-    <h1>Recreja Texel</h1>
+    <div id="title">
+        <h1>Recreja Texel</h1>
+        <hr>
+    </div>
 
     <div class="grid-container">
         <img id="Texel-vlag" src="foto's/Texel-vlag.svg" alt="Foto van de vlag van Texel. De vlag bestaat uit twee gelijke horizantale strepen waarvan de bovenste groen en de onderste zwart is.">
         <img id="Texel-kaart" src="foto's/Texel-kaart.jpeg" alt="Foto van Texel waar met een rode stip aangegeven is waar de accommodaties zich bevinden op het eiland.">
         <div id="fotos-huisjes">
             <a class="mySlides1" href="Pages/Chalet.html"><img src="foto's/tuin.jpg" alt="Foto van chalet met de tuin." ></a>
-            <a class="mySlides1" href=""><img src="foto's/parkeerplaats.jpg" alt="Foto van Chalet met parkeerplaats."></a>
+            <a class="mySlides1" href="Pages/Chalet.html"><img src="foto's/parkeerplaats.jpg" alt="Foto van Chalet met parkeerplaats."></a>
             <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
             <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
         </div>
