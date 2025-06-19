@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=refresh" />
+    <title>Prijzen</title>
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .text-container {
+            display: grid;
+            grid-template-columns: 0fr 3fr;
+            gap: 20px;
+        }
+
+        .header {
+            background-color: #e8d7b9;
+            width: 100%;
+            color: black;
+            padding-top: 40px;
+            padding-bottom: 3px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .way-back {
+            text-align: left;
+            font-size: 17px;
+            padding-left: 15px;
+            font-weight: bold;
+        }
+
+        h1 {
+            padding-top: 50px;
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-right: 20px;
+            grid-column : 2;
+        }
+
+        .left-side {
+            grid-column: 1;
+            text-align: center;
+            margin-left: 3rem;
+        }
+
+        .left-side.active {
+            grid-template-columns: 0 3fr;
+        }
+
+        td, th {
+            border: 1px solid #999;
+            padding: 0.5rem;
+            text-align: left;
+            width: auto;
+        }
+
+        .amnt-pers-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            gap: 1.5rem;
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        .amnt-pers-container-two {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        #button {
+            background-color: rgb(102, 181, 246);
+            border: none;
+            border-radius: 10px;
+        }
+
+        #prijs-overzicht {
+            height: 300px;
+            width: 210px;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s linear;  
+        }
+
+        #prijs-overzicht.active {
+            max-height: 110px;
+            text-align: left;
+        }
+
+        .title {
+            text-align: left;
+        }
+
+        button {
+            width: 10rem;
+            height: 2.1rem;
+        }
+
+        #totale-prijs {
+            font-weight: bold;
+        }
+
+        #refresh {
+            width: auto;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            gap: .5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p class="way-back">Home > Chalet</p>
+    </div>
+    <h1>Prijzen</h1>
+    <div class="left-side">
+        <div class="amnt-pers-container">
+            <div class="amnt-pers-container-two">
+                <label for="amnt-pers">Aantal personen:</label>
+                <input id="amnt-pers" type="number" min="1" max="4">
+            </div>
+            <p class="title">Selecteer uw periode in de tabel.</p>
+            <div class="button-container">
+                <button id="button">Bereken prijs!</button>
+                <button id="refresh">
+                    <span class="material-symbols-outlined">
+                    refresh
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div id="prijs-overzicht">
+            <div id="nachten">Aantal nachten</div>
+            <div id="huur-prijs">Huurprijs:</div>
+            <div id="schoonmaak-prijs">Schoonmaakprijs:</div>
+            <div id="toeristen-belasting">Toeristenbelasting:</div>
+            <hr>
+            <div id="totale-prijs">Totale prijs:</div>
+        </div>
+    </div>
+    <div class="text-container">
+        <div>
+            <p>Onderstaande huurprijzen zijn inclusief zwembadkaarten voor de <u>gehele</u> periode, maar exclusief schoonmaak en toeristenbelasting.</p>
+        </div>
+        <table id="mySelect">
+            <tr>
+                <th>Week - vrijdag</th>
+                <th>Prijs</th>
+                <th></th>
+                <th>Week - maandag</th>
+                <th>Prijs</th>
+                <th></th>
+                <th>Midweek</th>
+                <th>Prijs</th>
+                <th></th>
+                <th>Weekend</th>
+                <th>Prijs</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>3/1/25 - 10/1/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>6/1/25 - 13/1/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>6/1/25 - 10/1/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>3/1/25 - 6/1/25</td>
+                <td>280</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>10/1/25 - 17/1/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>13/1/25 - 20/1/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>13/1/25 - 17/1/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>10/1/25 - 13/1/25</td>
+                <td>280</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>17/1/25 - 24/1/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>20/1/25 - 27/1/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>20/1/25 - 24/1/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>17/1/25 - 20/1/25</td>
+                <td>280</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>24/1/25 - 31/1/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>27/1/25 - 3/2/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>27/1/25 - 31/1/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>24/1/25 - 27/1/25</td>
+                <td>280</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>31/1/25 - 7/2/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>3/2/25 - 10/2/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>3/2/25 - 7/2/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>31/1/25 - 3/2/25</td>
+                <td>280</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>7/2/25 - 14/2/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>10/2/25 - 17/2/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>10/2/25 - 14/2/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>7/2/25 - 10/2/25</td>
+                <td>280</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>14/2/25 - 21/2/25</td>
+                <td>585</td>
+                <td><input type="checkbox"></td>
+                <td>17/2/25 - 24/2/25</td>
+                <td>585</td>
+                <td><input type="checkbox"></td>
+                <td>17/2/25 - 21/2/25</td>
+                <td>425</td>
+                <td><input type="checkbox"></td>
+                <td>14/2/25 - 17/2/25</td>
+                <td>305</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>21/2/25 - 28/2/25</td>
+                <td>585</td>
+                <td><input type="checkbox"></td>
+                <td>24/2/25 - 3/3/25</td>
+                <td>585</td>
+                <td><input type="checkbox"></td>
+                <td>24/2/25 - 28/2/25</td>
+                <td>425</td>
+                <td><input type="checkbox"></td>
+                <td>21/2/25 - 24/2/25</td>
+                <td>305</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>28/2/25 - 7/3/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>10/3/25 - 17/3/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>10/3/25 - 14/3/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>28/2/25 - 3/3/25</td>
+                <td>280</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>7/3/25 - 14/3/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>10/3/25 - 17/3/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>10/3/25 - 14/3/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>7/3/25 - 10/3/25</td>
+                <td>280</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>14/3/25 - 21/3/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>17/3/25 - 24/3/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>17/3/25 - 21/3/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>14/3/25 - 17/3/25</td>
+                <td>280</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>21/3/25 - 28/3/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>24/3/25 - 31/3/25</td>
+                <td>490</td>
+                <td><input type="checkbox"></td>
+                <td>24/3/25 - 28/3/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>21/3/25 - 24/3/25</td>
+                <td>280</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>28/3/25 - 4/4/25</td>
+                <td>540</td>
+                <td><input type="checkbox"></td>
+                <td>31/3/25 - 7/4/25</td>
+                <td>540</td>
+                <td><input type="checkbox"></td>
+                <td>31/3/25 - 4/4/25</td>
+                <td>390</td>
+                <td><input type="checkbox"></td>
+                <td>28/3/25 - 31/3/25</td>
+                <td>305</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>4/4/25 - 11/4/25</td>
+                <td>540</td>
+                <td><input type="checkbox"></td>
+                <td>7/4/25 - 14/4/25</td>
+                <td>540</td>
+                <td><input type="checkbox"></td>
+                <td>7/4/25 - 11/4/25</td>
+                <td>390</td>
+                <td><input type="checkbox"></td>
+                <td>4/4/25 - 7/4/25</td>
+                <td>305</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>11/4/25 - 18/4/25</td>
+                <td>540</td>
+                <td><input type="checkbox"></td>
+                <td>14/4/25 - 21/4/25</td>
+                <td>540</td>
+                <td><input type="checkbox"></td>
+                <td>14/4/25 - 18/4/25</td>
+                <td>390</td>
+                <td><input type="checkbox"></td>
+                <td>11/4/25 - 14/4/25</td>
+                <td>305</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>18/4/25 - 25/4/25</td>
+                <td>725</td>
+                <td><input type="checkbox"></td>
+                <td>21/4/25 - 28/4/25</td>
+                <td>725</td>
+                <td><input type="checkbox"></td>
+                <td>21/4/25 - 25/4/25</td>
+                <td>400</td>
+                <td><input type="checkbox"></td>
+                <td>18/4/25 - 22/4/25</td>
+                <td>505</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>25/4/25 - 2/5/25</td>
+                <td>725</td>
+                <td><input type="checkbox"></td>
+                <td>28/4/25 - 5/5/25</td>
+                <td>725</td>
+                <td><input type="checkbox"></td>
+                <td>28/4/25 - 2/5/25</td>
+                <td>505</td>
+                <td><input type="checkbox"></td>
+                <td>25/4/25 - 28/4/25</td>
+                <td>400</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>2/5/25 - 9/5/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>5/5/25 - 12/5/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>5/5/25 - 9/5/25</td>
+                <td>475</td>
+                <td><input type="checkbox"></td>
+                <td>2/5/25 - 5/5/25</td>
+                <td>400</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>9/5/25 - 16/5/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>12/5/25 - 19/5/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>12/5/25 - 16/5/25</td>
+                <td>475</td>
+                <td><input type="checkbox"></td>
+                <td>9/5/25 - 12/5/25</td>
+                <td>375</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>16/5/25 - 23/5/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>19/5/25 - 26/5/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>19/5/25 - 23/5/25</td>
+                <td>475</td>
+                <td><input type="checkbox"></td>
+                <td>16/5/25 - 19/5/25</td>
+                <td>375</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>23/5/25 - 30/5/25</td>
+                <td>725</td>
+                <td><input type="checkbox"></td>
+                <td>26/5/25 - 2/6/25</td>
+                <td>725</td>
+                <td><input type="checkbox"></td>
+                <td>26/5/25 - 30/5/25</td>
+                <td>375</td>
+                <td><input type="checkbox"></td>
+                <td>23/5/25 - 26/5/25</td>
+                <td>375</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>30/5/25 - 6/6/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>2/6/25 - 9/6/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>2/6/25 - 6/6/25</td>
+                <td>475</td>
+                <td><input type="checkbox"></td>
+                <td>29/5/25 - 2/6/25</td>
+                <td>505</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>6/6/25 - 13/6/25</td>
+                <td>725</td>
+                <td><input type="checkbox"></td>
+                <td>9/6/25 - 16/6/25</td>
+                <td>725</td>
+                <td><input type="checkbox"></td>
+                <td>9/6/25 - 13/6/25</td>
+                <td>400</td>
+                <td><input type="checkbox"></td>
+                <td>6/6/25 - 10/6/25</td>
+                <td>505</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>13/6/25 - 20/6/25</td>
+                <td>725</td>
+                <td><input type="checkbox"></td>
+                <td>16/6/25 - 23/6/25</td>
+                <td>725</td>
+                <td><input type="checkbox"></td>
+                <td>16/6/25 - 20/6/25</td>
+                <td>505</td>
+                <td><input type="checkbox"></td>
+                <td>13/6/25 - 16/6/25</td>
+                <td>400</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>20/6/25 - 27/6/25</td>
+                <td>850</td>
+                <td><input type="checkbox"></td>
+                <td>23/6/25 - 30/6/25</td>
+                <td>850</td>
+                <td><input type="checkbox"></td>
+                <td>23/6/25 - 27/6/25</td>
+                <td>550</td>
+                <td><input type="checkbox"></td>
+                <td>20/6/25 - 23/6/25</td>
+                <td>425</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>27/6/25 - 4/7/25</td>
+                <td>850</td>
+                <td><input type="checkbox"></td>
+                <td>30/6/25 - 7/7/25</td>
+                <td>850</td>
+                <td><input type="checkbox"></td>
+                <td>30/6/25 - 4/7/25</td>
+                <td>550</td>
+                <td><input type="checkbox"></td>
+                <td>27/6/25 - 30/6/25</td>
+                <td>425</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>4/7/25 - 11/7/25</td>
+                <td>850</td>
+                <td><input type="checkbox"></td>
+                <td>7/7/25 - 14/7/25</td>
+                <td>850</td>
+                <td><input type="checkbox"></td>
+                <td>14/7/25 - 18/7/25</td>
+                <td>550</td>
+                <td><input type="checkbox"></td>
+                <td>4/7/25 - 7/7/25</td>
+                <td>425</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>11/7/25 - 18/7/25</td>
+                <td>1100</td>
+                <td><input type="checkbox"></td>
+                <td>14/7/25 - 21/7/25</td>
+                <td>1100</td>
+                <td><input type="checkbox"></td>
+                <td>21/7/25 - 25/7/25</td>
+                <td>675</td>
+                <td><input type="checkbox"></td>
+                <td>11/7/25 - 14/7/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>18/7/25 - 25/7/25</td>
+                <td>1100</td>
+                <td><input type="checkbox"></td>
+                <td>21/7/25 - 28/7/25</td>
+                <td>1100</td>
+                <td><input type="checkbox"></td>
+                <td>28/7/25 - 1/8/25</td>
+                <td>675</td>
+                <td><input type="checkbox"></td>
+                <td>18/7/25 - 21/7/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>25/7/25 - 1/8/25</td>
+                <td>1100</td>
+                <td><input type="checkbox"></td>
+                <td>28/7/25 - 4/8/25</td>
+                <td>1100</td>
+                <td><input type="checkbox"></td>
+                <td>4/8/25 - 8/8/25</td>
+                <td>675</td>
+                <td><input type="checkbox"></td>
+                <td>25/7/25 - 28/7/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>1/8/25 - 8/8/25</td>
+                <td>1100</td>
+                <td><input type="checkbox"></td>
+                <td>4/8/25 - 11/8/25</td>
+                <td>1100</td>
+                <td><input type="checkbox"></td>
+                <td>11/8/25 - 15/8/25</td>
+                <td>675</td>
+                <td><input type="checkbox"></td>
+                <td>1/8/25 - 4/8/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>8/8/25 - 15/8/25</td>
+                <td>1100</td>
+                <td><input type="checkbox"></td>
+                <td>11/8/25 - 18/8/25</td>
+                <td>1100</td>
+                <td><input type="checkbox"></td>
+                <td>18/8/25 - 22/8/25</td>
+                <td>675</td>
+                <td><input type="checkbox"></td>
+                <td>8/8/25 - 11/8/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>15/8/25 - 22/8/25</td>
+                <td>1100</td>
+                <td><input type="checkbox"></td>
+                <td>18/8/25 - 25/8/25</td>
+                <td>1100</td>
+                <td><input type="checkbox"></td>
+                <td>25/8/25 - 29/8/25</td>
+                <td>675</td>
+                <td><input type="checkbox"></td>
+                <td>15/8/25 - 18/8/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>22/8/25 - 29/8/25</td>
+                <td>850</td>
+                <td><input type="checkbox"></td>
+                <td>25/8/25 - 1/9/25</td>
+                <td>850</td>
+                <td><input type="checkbox"></td>
+                <td>1/9/25 - 5/9/25</td>
+                <td>550</td>
+                <td><input type="checkbox"></td>
+                <td>22/8/25 - 25/8/25</td>
+                <td>425</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>29/8/25 - 5/9/25</td>
+                <td>850</td>
+                <td><input type="checkbox"></td>
+                <td>1/9/25 - 8/9/25</td>
+                <td>850</td>
+                <td><input type="checkbox"></td>
+                <td>8/9/25 - 12/9/25</td>
+                <td>550</td>
+                <td><input type="checkbox"></td>
+                <td>29/8/25 - 1/9/25</td>
+                <td>425</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>5/9/25 - 12/9/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>8/9/25 - 15/9/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>15/9/25 - 19/9/25</td>
+                <td>475</td>
+                <td><input type="checkbox"></td>
+                <td>5/9/25 - 8/9/25</td>
+                <td>375</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>12/9/25 - 19/9/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>15/9/25 - 22/9/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>22/9/25 - 26/9/25</td>
+                <td>475</td>
+                <td><input type="checkbox"></td>
+                <td>12/9/25 - 15/9/25</td>
+                <td>375</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>19/9/25 - 26/9/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>22/9/25 - 29/9/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>29/9/25 - 3/10/25</td>
+                <td>475</td>
+                <td><input type="checkbox"></td>
+                <td>19/9/25 - 22/9/25</td>
+                <td>375</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>26/9/25 - 3/10/25</td>
+                <td>535</td>
+                <td><input type="checkbox"></td>
+                <td>29/9/25 - 6/10/25</td>
+                <td>535</td>
+                <td><input type="checkbox"></td>
+                <td>6/10/25 - 10/10/25</td>
+                <td>375</td>
+                <td><input type="checkbox"></td>
+                <td>26/9/25 - 29/9/25</td>
+                <td>300</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>3/10/25 - 10/10/25</td>
+                <td>535</td>
+                <td><input type="checkbox"></td>
+                <td>6/10/25 - 13/10/25</td>
+                <td>535</td>
+                <td><input type="checkbox"></td>
+                <td>13/10/25 - 17/10/25</td>
+                <td>675</td>
+                <td><input type="checkbox"></td>
+                <td>3/10/25 - 6/10/25</td>
+                <td>300</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>10/10/25 - 17/10/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>13/10/25 - 20/10/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>20/10/25 - 24/10/25</td>
+                <td>375</td>
+                <td><input type="checkbox"></td>
+                <td>10/10/25 - 13/10/25</td>
+                <td>375</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>17/10/25 - 24/10/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>20/10/25 - 27/10/25</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>27/10/25 - 31/10/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>17/10/25 - 20/10/25</td>
+                <td>375</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>24/10/25 - 31/10/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>27/10/25 - 3/11/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>27/10/25 - 31/10/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>21/10/25 - 27/10/25</td>
+                <td>325</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>31/10/25 - 7/11/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>3/11/25 - 10/11/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>3/11/25 - 7/11/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>31/10/25 - 3/11/25</td>
+                <td>285</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>7/11/25 - 14/11/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>10/11/25 - 17/11/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>10/11/25 - 14/11/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>7/11/25 - 10/11/25</td>
+                <td>285</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>14/11/25 - 21/11/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>17/11/25 - 24/11/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>17/11/25 - 21/11/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>14/11/25 - 17/11/25</td>
+                <td>285</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>21/11/25 - 28/11/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>24/11/25 - 1/12/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>24/11/25 - 28/11/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>21/11/25 - 24/11/25</td>
+                <td>285</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>28/11/25 - 5/12/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>1/12/25 - 8/12/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>1/12/25 - 5/12/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>28/11/25 - 1/12/25</td>
+                <td>285</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>5/12/25 - 12/12/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>8/12/25 - 15/12/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>8/12/25 - 12/12/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>5/12/25 - 8/12/25</td>
+                <td>285</td>
+               <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>12/12/25 - 19/12/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>15/12/25 - 22/12/25</td>
+                <td>485</td>
+                <td><input type="checkbox"></td>
+                <td>15/12/25 - 19/12/25</td>
+                <td>355</td>
+                <td><input type="checkbox"></td>
+                <td>12/12/25 - 15/12/25</td>
+                <td>285</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>19/12/25 - 26/12/25</td>
+                <td>850</td>
+                <td><input type="checkbox"></td>
+                <td>22/12/25 - 29/12/25</td>
+                <td>850</td>
+                <td><input type="checkbox"></td>
+                <td>22/12/25 - 26/12/25</td>
+                <td>550</td>
+                <td><input type="checkbox"></td>
+                <td>19/12/25 - 22/12/25</td>
+                <td>375</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>27/12/25 - 2/1/26</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>29/12/25 - 5/1/26</td>
+                <td>670</td>
+                <td><input type="checkbox"></td>
+                <td>29/12/25 - 2/1/26</td>
+                <td>505</td>
+                <td><input type="checkbox"></td>
+                <td>26/12/25 - 29/12/25</td>
+                <td>425</td>
+                <td><input type="checkbox"></td>
+            </tr>
+        </table>
+        <script>
+            let schoonmaakPrijs = 70.00;
+            let aantalPersonen = document.getElementById('amnt-pers');
+            let button = document.querySelector('button');
+            const screenZero = document.getElementById('nachten');
+            const screenOne = document.getElementById('huur-prijs');
+            const screenTwo = document.getElementById('toeristen-belasting');
+            const screenThree = document.getElementById('schoonmaak-prijs');
+            const screenFour = document.getElementById('totale-prijs');
+            const prijsOverzicht = document.getElementById('prijs-overzicht');
+            let toeristenBelasting = 0;
+            let selectedPrices = [];
+            let selectedNights = [];
+            let refreshButton = document.getElementById('refresh');
+
+
+            document.addEventListener("DOMContentLoaded", function() {
+                let checkboxes = document.querySelectorAll("#mySelect input[type='checkbox']");
+                let selectedDates = [];
+                checkboxes.forEach((checkbox) => {
+                    checkbox.addEventListener("change", function () {
+                        let dataCell = this.parentElement.previousElementSibling.previousElementSibling;
+                        let priceCell = this.parentElement.previousElementSibling;
+                                                    
+                        let dates = dataCell.innerText.split(" - ");
+                            let startDateParts = dates[0].trim().split('/');
+                            let endDateParts = dates[1].trim().split('/');
+
+                            let startDate = new Date(`2025-${startDateParts[1]}-${startDateParts[0]}`);
+                            let endDate = new Date(`2025-${endDateParts[1]}-${endDateParts[0]}`);
+
+                        if (this.checked) {
+                            if (selectedDates.length >= 2){
+                                this.checked = false;
+                                alert("Je mag maximaal 2 periodes selecteren");
+                                return;
+                            }
+
+                            if (selectedDates.length === 1) {
+                                let existing = selectedDates[0];
+                                if (!(existing.end.getTime() === startDate.getTime() || endDate.getTime() === existing.start.getTime())) {
+                                    this.checked = false;
+                                    alert("De periodes moeten direct op elkaar aansluiten");
+                                    return;
+                                }
+                            }
+
+                            selectedDates.push({ start: startDate, end: endDate})
+
+                            let price = parseFloat(priceCell.innerText.replace("€", " ").replace(",", "."));
+                            selectedPrices.push(price);
+
+                            let nights = (endDate - startDate) / (1000 * 60 *60 * 24);
+                            selectedNights.push(nights);
+
+                            selectedPrice = parseFloat(priceCell.innerText);
+                        } else {
+                            selectedDates = selectedDates.filter(d => !(d.start.getTime() === startDate.getTime() && d.end.getTime() === endDate.getTime()));
+
+                            let price = parseFloat(priceCell.innerText.replace("€", "").replace(",", "."));
+                            let nights = (endDate - startDate) / (1000 * 60 * 60 * 24);
+
+                            selectedPrices = selectedPrices.filter(p => p !== price);
+                            selectedNights = selectedNights.filter(n => n !== nights);
+                        }
+                        console.log("Geselecteerde prijzen:", selectedPrices);
+                        console.log("Geselecteerde nachten:", selectedNights);
+                    });
+                });
+            });
+            function calculatePrice(aantalPersonen, schoonmaakPrijs) {
+                let totaalPrijsHuur = selectedPrices.reduce((a, b) => a + b, 0);
+                let totaalNachten = selectedNights.reduce((a, b) => a + b, 0);
+
+                toeristenBelasting = aantalPersonen * totaalNachten * 2.4; 
+                let totalePrijs = toeristenBelasting + schoonmaakPrijs + totaalPrijsHuur;
+                return {
+                    totalePrijs,
+                    totaalPrijsHuur,
+                    totaalNachten
+                };    
+            }
+
+            button.addEventListener('click', function() {
+                let personen = parseInt(aantalPersonen.value) || 0;
+
+                if (selectedPrices.length === 0 || selectedNights.length === 0) {
+                    alert("Selecteer een geldige optie.");
+                    return;
+                }
+
+                if (personen > 4) {
+                    alert("Het chalet heeft een maximum van 4 personen.");
+                    return;
+                    
+                }
+                else if (personen < 1) {
+                    alert("Het chalet heeft een minimum van 1 persoon");
+                    return;
+                }
+
+                prijsOverzicht.classList.toggle('active');
+
+                const {totalePrijs, totaalPrijsHuur, totaalNachten} = calculatePrice(personen, schoonmaakPrijs);
+
+                screenZero.innerText = `Aantal nachten: ${totaalNachten.toFixed(0)}`;
+                screenOne.innerText = `Huurprijs: €${totaalPrijsHuur.toFixed(2)}`;
+                screenThree.innerText = `Schoonmaakkosten: €${schoonmaakPrijs.toFixed(2)}`;
+                screenTwo.innerText = `Toeristenbelasting: €${toeristenBelasting.toFixed(2)}`;
+                screenFour.innerText = `Totale prijs: €${totalePrijs.toFixed(2)}`;
+            })
+
+            refreshButton.addEventListener('click', function() {
+                window.location.reload("Refresh");
+            })
+       </script>
+    </body>
+</html>
