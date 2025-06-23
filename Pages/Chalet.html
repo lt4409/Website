@@ -10,6 +10,7 @@
             padding: 0;
             width: 100%;
             font-family: 'Poppins', 'sans-serif';
+            color: black;
         }
 
         .menubalk {
@@ -26,7 +27,7 @@
             z-index: 1000;
         }
 
-        a {
+        .menubalk > a {
             color: white;
             text-decoration: none;
         }
@@ -45,6 +46,91 @@
         h2 {
             font-size: 40px;
         }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .grid-container > div > a {
+            width: 100%;
+            height: 100%;
+            font-size: 2.0rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #beschikbaarheid {
+            grid-area: 1/1/2/2;
+        }
+
+        #prijzen {
+            grid-area: 2/1/3/2;
+        }
+
+        #foto-container {
+            grid-area: 1/2/3/3;
+            position: relative;
+            height: 30rem;
+            overflow: hidden;
+        }
+
+        .mySlides {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .mySlides.show {
+            opacity: 1;
+        }
+
+        #reserveren {
+            grid-area: 1/3/2/4;
+        }
+
+        #informatie-aanvraag {
+            grid-area: 2/3/3/4;
+        } 
+        
+        .prev, .next {
+            color: white;
+            position: absolute;
+            cursor: pointer;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            top: 50%;
+            font-size: 18px;
+            z-index: 2;
+            user-select: none;
+        }
+
+        .prev {
+            right: 20%;
+            border-radius: 0 3px 3px 0;
+            transform: translateX(-50%);
+        }
+
+        .next {
+            left: 20%;
+            border-radius: 3px 0 0 3px;
+            transform: translateX(50%);
+        }
+
+        .prev:hover, .next:hover {
+            background-color: grey;
+        }
+
     </style>
 </head>
 <body>
@@ -63,11 +149,51 @@
     </div>
 
     <div class="grid-container">
-        <div><a href="Chalet/Pages/beschikbaarheid.html">Beschikbaarheid</a></div>
-        <div><a href="Chalet/Pages/prijzen.html">Prijzen</a></div>
-        <div></div>
-        <div><a href="Chalet/Pages/form.html">Reserveren</a></div>
-        <div><a href="informatie-form.html">Informatie aanvraag</a></div>
+        <div id="beschikbaarheid"><a href="Chalet/Pages/beschikbaarheid.html">Beschikbaarheid</a></div>
+        <div id="prijzen"><a href="Chalet/Pages/prijzen.html">Prijzen</a></div>
+        <div id="foto-container">
+            <img class="mySlides" src="Chalet/Pages/foto's/tuin-chalet.jpg" alt="Foto van chalet met de tuin.">
+            <img class="mySlides" src="Chalet/Pages/foto's/parkeerplaats.jpg" alt="Foto van Chalet met parkeerplaats.">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a> 
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div id="reserveren"><a href="Chalet/Pages/form.html">Reserveren</a></div>
+        <div id="informatie-aanvraag"><a href="informatie-form.html">Informatie aanvraag</a></div>
     </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("show");
+            }
+
+            slides[slideIndex-1].classList.add("show");  
+        }
+
+        let autoTimer = null;
+
+        function autoSlides() {
+            slideIndex++;
+            showSlides(slideIndex);
+            autoTimer = setTimeout(autoSlides, 3000); // 3 seconds
+        }
+
+        autoSlides();
+    </script>
 </body>
 </html>
