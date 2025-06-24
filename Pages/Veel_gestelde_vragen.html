@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veel gestelde vragen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -12,10 +13,11 @@
         }
 
         .header {
-            background-color: #2C2C38;
+            background-color: #1d1e2c;
             width: 100%;
-            display: flex;
-            flex-direction: row;
+            color: white;
+            padding-top: 40px;
+            padding-bottom: 3px;
             position: -webkit-sticky;
             position: sticky;
             top: 0;
@@ -38,6 +40,63 @@
             display: flex;
             justify-content: center;
         }
+
+        .faq {
+            max-width: 50rem;
+            margin: 2rem auto;
+            padding: 2rem;
+            padding-bottom: 1rem;
+            cursor: pointer;
+            border: 2px solid white;
+            border-radius: 10px;
+        }
+
+        section {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            border-bottom: 2px solid black;
+        }
+
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        .question h2 {
+            font-size: 1.5rem;
+        }
+
+        .answer p {
+            line-height: 1.6;
+            font-size: 1.2rem;
+            padding-top: 0;
+            margin-top: 0;
+        }
+
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 1s ease;    
+            margin-top: 0;    
+        }
+
+        section.active .answer {
+            max-height: 300px;
+            margin-top: 0;
+        }
+
+        section.active svg {
+            transform: rotate(180deg);
+        }
+
+        svg {
+            transition: transform 0.5s ease-in;
+        }
     </style>
 </head>
 <body>
@@ -47,5 +106,60 @@
     <div class="title-container">
         <h1>Veel gestelde vragen</h1>
     </div>
+    <div class="faq">
+        <section>
+            <div class="question">
+                <h2>Van waar vertrekt de boot en hoe kom ik aan een ticket?</h2>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>De veerboot vertrekt van en naar Den Helder, de vaart zelf duurt maar 20 minuten. Tickets kunnen ter plekke of online (<a href="https://www.teso.nl/">www.teso.nl</a>) worden aangeschaft. Daar kunt u ook de vertrektijden vinden.</p>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <h2>Hoe zit het met parkeren op Texel?</h2>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Een groot deel van Texel is betaald parkeren. Voor meer informatie en online parkeertickets: <a href="https://texelvignet.nl">www.texelvignet.nl</a>.</p>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <h2>Hebben jullie ook accommodaties buiten Texel?</h2>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Wie weet in de toekomst, maar op dit moment in ieder geval niet.</p>
+            </div>
+        </section>
+        <section>
+            <div class="question">
+                <h2>Wat doen jullie met onze persoonlijke gegevens?</h2>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="none" stroke-width="7" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>Uw NAW gegecens plus e-mail en telefoonnummer zijn nodig voor het vastleggen van de boeking in het vakantiepark, voor de aangifte van de toeristenbelasting en om contact te kunnen hebben voor, tijdens of na afloop van uw verblijf. Uw gegevens worden echter niet langer dan nodig bewaard op de webserver.</p>
+            </div>
+        </section>
+    </div>
+    <script>
+        const faqs = document.querySelectorAll("section"); 
+
+        faqs.forEach( faq => {
+            faq.addEventListener("click", function() {
+                this.classList.toggle("active"); 
+            })
+        });
+    </script>
 </body>
 </html>
