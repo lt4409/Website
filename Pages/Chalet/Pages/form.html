@@ -173,11 +173,27 @@
             padding-left: 15px;
             font-weight: bold;
             color: white;
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
         }
 
         .way-back > a {
             color: white;
             text-decoration: none;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-top: 1rem;
+            margin-left: 0.5rem;
+            font-size: 1rem;
+        }
+
+        ul > li:hover {
+            font-size: 18px;
         }
 
         a {
@@ -319,19 +335,19 @@
 </head>
 <body>
     <div class="header">
-        <p class="way-back">
-            <a href="../../../index.html">Home ></a> 
+        <div class="way-back">
+            <a href="../../../index.html">Home > </a> 
             <div class="accommedatie-container">
-                <a class="accommedatie">Accommedaties</a>
+                <a class="accommedatie"> Accommedaties</a>
                 <div class="underheader">
-                    <ol class="accommedaties">
+                    <ul class="accommedaties">
                         <li>Appartement</li>
                         <li>Bungalow</li>
                         <li><a href="../../Chalet.html">Chalet</a></li>
-                    </ol>
+                    </ul>
                 </div>
             </div>
-        </p>
+        </div>
     </div>
     <div class="main-container">
         <div class="title-container">
