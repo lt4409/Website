@@ -65,17 +65,58 @@
             padding-left: 15px;
             font-weight: bold;
             color: white;
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
         }
 
         .way-back > a {
             text-decoration: none;
             color: white;
         }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            margin-top: 1rem;
+            margin-left: 0.5rem;
+            font-size: 1rem;
+        }
+
+        ul > li:hover {
+            font-size: 18px;
+        }
+
+        li > a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .accommedaties {
+            display: none;
+        } 
+
+        .underheader {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <p class="way-back"><a href="../index.html">Home</a></p>
+        <div class="way-back">
+            <a href="../index.html">Home ></a>
+            <div class="accommedatie-container">
+                <a class="accommedatie"> Accommedaties</a>
+                <div class="underheader">
+                    <ul class="accommedaties">
+                        <li>Appartement</li>
+                        <li>Bungalow</li>
+                        <li><a href="Chalet.html">Chalet</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <h1>Informatie aanvraag</h1>
     <form action="https://formsubmit.co/tjoaatf@gmail.com" method="POST">
@@ -122,6 +163,18 @@
 
         <button type="submit">Verzenden</button>
     </form>
-    
+    <script>
+        let accommedatieContainer = document.getElementsByClassName("accommedatie-container")[0]
+        let accommedatie = document.getElementsByClassName("accommedatie")[0];
+        let accommedaties = document.getElementsByClassName("accommedaties")[0];
+
+        accommedatieContainer.addEventListener('mouseover', () => {
+            accommedaties.style.display = "block";
+        })
+
+        accommedatieContainer.addEventListener('mouseout', () => {
+            accommedaties.style.display = "none";
+        })
+    </script>
 </body>
 </html>
