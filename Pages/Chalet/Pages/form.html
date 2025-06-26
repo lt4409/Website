@@ -180,6 +180,19 @@
             text-decoration: none;
         }
 
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .accommedaties {
+            display: none;
+        } 
+
+        .underheader {
+            width: 100%;
+        }
+
         .personal-info {
             display: flex;
             flex-direction: row;
@@ -306,7 +319,19 @@
 </head>
 <body>
     <div class="header">
-       <p class="way-back"><a href="../../../index.html">Home</a></p>
+        <p class="way-back">
+            <a href="../../../index.html">Home ></a> 
+            <div class="accommedatie-container">
+                <a class="accommedatie">Accommedaties</a>
+                <div class="underheader">
+                    <ol class="accommedaties">
+                        <li>Appartement</li>
+                        <li>Bungalow</li>
+                        <li><a href="../../Chalet.html">Chalet</a></li>
+                    </ol>
+                </div>
+            </div>
+        </p>
     </div>
     <div class="main-container">
         <div class="title-container">
@@ -440,6 +465,18 @@
        </div>
     </div>
     <script>
+        let accommedatieContainer = document.getElementsByClassName("accommedatie-container")[0]
+        let accommedatie = document.getElementsByClassName("accommedatie")[0];
+        let accommedaties = document.getElementsByClassName("accommedaties")[0];
+
+        accommedatieContainer.addEventListener('mouseover', () => {
+            accommedaties.style.display = "block";
+        })
+
+        accommedatieContainer.addEventListener('mouseout', () => {
+            accommedaties.style.display = "none";
+        })
+
         const adultsAboveFiftyInput = document.querySelector("#adults-above-fifty");
         const adultsUnderFiftyInput = document.querySelector("#adults-under-fifty");
         const childTillEighteenInput = document.querySelector("#child-till-eighteen");
