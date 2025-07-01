@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Informatie aanvraag formulier</title>
     <style>
         body {
             background-color: #d7e4d1;
@@ -100,6 +100,33 @@
         .underheader {
             width: 100%;
         }
+
+        #accommedatie {
+            display: flex;
+            flex-direction: row;
+        }
+
+        button {
+            width: 40%;
+            text-align: center;
+            margin-top: 20px;
+            background-color: rgb(102, 119, 97);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: #3498db;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -143,13 +170,19 @@
         </fieldset>
 
         <fieldset>
-            <legend><span class="required">*</span>Periode waarvoor belangstelling</legend>
+            <legend><span class="required">*</span>Periode en accommedatie waarvoor belangstelling</legend>
             <label for="start-date">Begindatum:</label>
             <input name="begindatum" type="date" id="start-date">
             <label for="end-date">Einddatum:</label>
             <input name="einddatum" type="date" id="end-date">
             <input name="nog_onbekend" type="checkbox" id="unknown" value="ja">
             <label for="unknown">Nog onbekend</label>
+            <label for="accommedatie">Accommedatie:</label>
+            <select name="accommedatie" id="accommedatie">
+                <option value="Bungalow">Bungalow</option>
+                <option value="Chalet"> Chalet</option>
+                <option value="Appartement">Appartement</option>
+            </select>
         </fieldset>
 
         <label for="ammount"><span class="required">*</span>Aantal personen:</label>
@@ -161,7 +194,9 @@
         <label for="text-box"><span class="required">*</span>Vraag:</label>
         <textarea  name="vraag" rows="6" id="text-box" maxlength="400"></textarea>
 
-        <button type="submit">Verzenden</button>
+        <div class="btn-container">
+            <button type="submit">Verzenden</button>
+        </div>
     </form>
     <script>
         let accommedatieContainer = document.getElementsByClassName("accommedatie-container")[0]
