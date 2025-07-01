@@ -62,14 +62,15 @@
 
         .button {
             border: none;
-            background-color: #0077cc;
+            background-color:#0077cc;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 25rem;
+            max-width: 25rem;
+            width: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            margin: 2rem;
+
             z-index: 5;
         }
 
@@ -90,8 +91,13 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-columns: 1fr 3fr 1fr;
             grid-template-rows: 1fr 1fr;
+            justify-items: stretch;
+            gap: 2rem;
+            padding: 2rem;
+            box-sizing: border-box;
+            margin: 0 auto;
         }
 
         .grid-container > div > a {
@@ -120,6 +126,16 @@
             overflow: hidden;
         }
 
+        #foto-container > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-width: 0;
+            min-height: 0;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
         .mySlides {
             opacity: 0;
             transition: opacity 1s ease-in-out;
@@ -128,6 +144,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 0;
+            justify-items: stretch;
         }
 
         .mySlides.show {
@@ -194,19 +211,19 @@
     </div>
 
     <div class="grid-container">
-        <div class="button-container">
-            <div id="beschikbaarheid" class="button">
+        <div id="beschikbaarheid" class="button-container">
+            <div class="button">
                 <a href="Chalet/Pages/beschikbaarheid.html">Beschikbaarheid</a>
             </div>
-            <a href="Chalet/Pages/form.html" style="color: black; font-size: 100px; text-decoration: none;">
+            <a href="Chalet/Pages/form.html" style="color: black; font-size: 80px; text-decoration: none;">
                 <i class="fa-solid fa-calendar-days" style="margin-right: 10px;"></i>
             </a>
         </div>
-        <div class="button-container">
-            <div id="prijzen" class="button">
+        <div class="button-container" id="prijzen">
+            <div class="button">
                 <a href="Chalet/Pages/prijzen.html">Prijzen</a>
             </div>
-            <a href="Chalet/Pages/prijzen.html" style="color: black; font-size: 100px; text-decoration: none;">
+            <a href="Chalet/Pages/prijzen.html" style="color: black; font-size: 80px; text-decoration: none;">
                 <i class="fa-solid fa-euro-sign" style="margin-right: 10px;"></i>
             </a>  
         </div>
@@ -217,19 +234,19 @@
             <span class="prev" onclick="plusSlides(-1)">&#10094;</span> 
             <span class="next" onclick="plusSlides(1)">&#10095;</span>
         </div>
-        <div class="button-container">
-            <div id="reserveren" class="button">
+        <div class="button-container" id="reserveren">
+            <div class="button">
                 <a href="Chalet/Pages/form.html">Reserveren</a>
             </div>
-            <a href="Chalet/Pages/form.html" style="color: black; font-size: 100px; text-decoration: none;">
+            <a href="Chalet/Pages/form.html" style="color: black; font-size: 80px; text-decoration: none;">
                 <i class="fa-solid fa-clipboard-list" style="margin-right: 10px;"></i>
             </a>
         </div>
-        <div class="button-container">
-            <div id="informatie-aanvraag" class="button">
+        <div class="button-container" id="informatie-aanvraag">
+            <div class="button">
                 <a href="informatie-form.html">Informatie aanvraag</a>
             </div>
-            <a href="informatie-form.html" style="color: black; font-size: 100px; text-decoration: none;">
+            <a href="informatie-form.html" style="color: black; font-size: 80px; text-decoration: none;">
                 <i class="fa fa-info" style="margin-right: 10px;"></i>
             </a>  
         </div>
