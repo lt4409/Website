@@ -67,14 +67,17 @@
         }
 
         .amnt-pers-container {
-            grid-area: 1/1/3/2;
+            grid-area: 1/1/2/2;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             gap: 1.5rem;
-            border: 1px solid black;
+            border: 1px solid #f4f1f1;
             padding: 20px;
             width: 20rem;
-            height: 15rem;
+            height: 14rem;
+            background-color: #f4f1f1;
         }
 
         .amnt-pers-container-two {
@@ -90,6 +93,7 @@
         }
 
         #prijs-overzicht {
+            grid-area: 2/1/3/2;
             height: auto;
             overflow: hidden;
             transition: max-height 0.5s linear; 
@@ -101,7 +105,7 @@
             max-height: 1000px;
         }
 
-        .text-container > p {
+        .paragraph-container {
             grid-area: 1/2/2/3;
         }
 
@@ -141,7 +145,6 @@
                 <label for="amnt-pers">Aantal personen:</label>
                 <input id="amnt-pers" type="number" min="1" max="4">
             </div>
-            <p class="title">Selecteer uw periode in de tabel:</p>
             <div class="button-container">
                 <button id="button">Bereken prijs!</button>
                 <button id="refresh">
@@ -150,6 +153,16 @@
                     </span>
                 </button>
             </div>
+        </div>
+        <div class="paragraph-container">
+            <p>Onderstaande huurprijzen zijn inclusief zwembadkaarten voor de gehele periode, maar excllusief schoonmaak en toeristenbelasting:</p>
+            <ol>
+                <li>Schoonmaak: Eindschoonmaak is verplicht. De kosten hiervan zijn €70,00.</li>
+                <li>Toeristenbelasting - Deze bedraagt €2,40 per persoon, per nacht (tarief 2025) en €2,60 per persoon, per nacht (tarief 2026) en wordt door ons afgedragen aan de gemeente Texel.</li>
+            </ol>
+            <p>Een korting op de huurprijs is mogelijk bij een langere periode.</p>
+            <p>Afhankelijk van beschikbaarheid is een afwijkende periode buiten het hoogseizoen, vakanties en feestdagen mogelijk. Aangezien de automatische prijsberekening hier niet in voorziet moet dit op aanvraag manueel worden berekend.</p>
+            <p>Selecteer uw gewenste periode in onderstaande tabel voor een prijsberekening:</p>
         </div>
         <div id="prijs-overzicht">
             <div id="nachten">Aantal nachten</div>
