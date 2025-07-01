@@ -188,7 +188,7 @@
                 <th></th>
             </tr>
             <tr>
-                <td>3/1/25 - 10/1/25</td>
+                <td>3/1/26 - 10/1/26</td>
                 <td>€490</td>
                 <td><input type="checkbox"></td>
                 <td>6/1/25 - 13/1/25</td>
@@ -929,6 +929,7 @@
         const prijsOverzicht = document.getElementById('prijs-overzicht');
         let selectedPrices = [];
         let selectedNights = [];
+        let selectedDates = [];
         let refreshButton = document.getElementById('refresh');
 
         function parseDateFromString(dateStr) {
@@ -942,7 +943,7 @@
 
         document.addEventListener("DOMContentLoaded", function() {
             let checkboxes = document.querySelectorAll("#mySelect input[type='checkbox']");
-            let selectedDates = [];
+            selectedDates = [];
             checkboxes.forEach((checkbox) => {
                 checkbox.addEventListener("change", function () {
                     let dataCell = this.parentElement.previousElementSibling.previousElementSibling;
@@ -996,7 +997,17 @@
             let totaalPrijsHuur = selectedPrices.reduce((a, b) => a + b, 0);
             let totaalNachten = selectedNights.reduce((a, b) => a + b, 0);
 
-            let toeristenBelasting = aantalPersonen * totaalNachten * 2.4; 
+            let year = selectedDates[0].start.getFullYear();
+            let toeristenPrijs;
+
+            if (year === 2025) {
+                toeristenPrijs = 2.4
+            }
+            else {
+                toeristenPrijs = 2.6
+            }
+
+            let toeristenBelasting = aantalPersonen * totaalNachten * toeristenPrijs; 
             let totalePrijs = toeristenBelasting + schoonmaakPrijs + totaalPrijsHuur;
             return {
                 totalePrijs,
