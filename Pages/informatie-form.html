@@ -27,15 +27,46 @@
             padding: 40px;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
             border-top: 20px solid rgb(102, 119, 97);
+        }
 
+        .title-container .form-container {
+            box-sizing: border-box;
+            padding: 40px;
+        }
+
+        .title-container {
+            background-color: rgb(102, 119, 97);
+            color: white;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            box-sizing: border-box;
+            padding: 20px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-container {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         input {
             margin-bottom: 15px;
             padding: 5px;
-            border-radius: 5px;
             width: auto;
             cursor: pointer;
+        }
+
+        input, select, textarea {
+            border: 2px solid #ccc;
+            border-radius: 5px;
         }
 
         .required {
@@ -101,11 +132,6 @@
             width: 100%;
         }
 
-        #accommedatie {
-            display: flex;
-            flex-direction: row;
-        }
-
         button {
             width: 40%;
             text-align: center;
@@ -145,59 +171,66 @@
             </div>
         </div>
     </div>
-    <h1>Informatie aanvraag</h1>
-    <form action="https://formsubmit.co/tjoaatf@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Informatie aanvraag">
-        <input type="hidden" name="_autoresponse" value="Uw formulier is verzonden. Hier is een kopie van uw antwoorden.">
-        <fieldset>
-            <legend>Persoonlijke informatie</legend>
-            <label id="name"><span class="required">*</span>Naam:</label>
-            <input name="naam" type="text" id="name" required>
-            <label for="email-adress"><span class="required">*</span>Email adres:</label>
-            <input name="email" type="email" id="email-adress" required>
-       
-
-            <label for="selecter"><span class="required">*</span>Telefoonnummer:</label>
-            <div class="telephone-container">
-               <select name="land_telefoonnummer" id="selecter">
-                  <option value="Nederland (+31)" selected>(Nederland) +31</option>
-                  <option value="Duitsland (+49)">(Duitsland) +49</option>
-                  <option value="België (+32)">(België) +32</option>
-                  <option value="Verenigd Koninkrijk (+44)">(Verenigd Koninkrijk) +44</option>
-               </select>
-               <input name="telefoonnummer" type="tel" id="telephone-number">
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend><span class="required">*</span>Periode en accommedatie waarvoor belangstelling</legend>
-            <label for="start-date">Begindatum:</label>
-            <input name="begindatum" type="date" id="start-date">
-            <label for="end-date">Einddatum:</label>
-            <input name="einddatum" type="date" id="end-date">
-            <input name="nog_onbekend" type="checkbox" id="unknown" value="ja">
-            <label for="unknown">Nog onbekend</label>
-            <label for="accommedatie">Accommedatie:</label>
-            <select name="accommedatie" id="accommedatie">
-                <option value="Bungalow">Bungalow</option>
-                <option value="Chalet"> Chalet</option>
-                <option value="Appartement">Appartement</option>
-            </select>
-        </fieldset>
-
-        <label for="ammount"><span class="required">*</span>Aantal personen:</label>
-        <input name="aantal personen" type="number" id="ammount" min="1" max="6">
-
-        <label for="subject"><span class="required">*</span>Onderwerp:</label>
-        <input name="onderwerp" type="text" id="subject">
-
-        <label for="text-box"><span class="required">*</span>Vraag:</label>
-        <textarea  name="vraag" rows="6" id="text-box" maxlength="400"></textarea>
-
-        <div class="btn-container">
-            <button type="submit">Verzenden</button>
+    <div class="main-container">
+        <div class="title-container">
+            <h2>Informatie aanvraag</h2>
+            <p><span class="required">*</span>Voor een juiste en snelle afhandeling van uw aanvraag moeten alle onderstaande velden gevuld zijn.</p>
         </div>
-    </form>
+        <div class="form-container">
+            <form action="https://formsubmit.co/tjoaatf@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Informatie aanvraag">
+                <input type="hidden" name="_autoresponse" value="Uw formulier is verzonden. Hier is een kopie van uw antwoorden.">
+                <fieldset>
+                    <legend>Persoonlijke informatie</legend>
+                    <label id="name"><span class="required">*</span>Naam:</label>
+                    <input name="naam" type="text" id="name" required>
+                    <label for="email-adress"><span class="required">*</span>Email adres:</label>
+                    <input name="email" type="email" id="email-adress" required>
+            
+
+                    <label for="selecter"><span class="required">*</span>Telefoonnummer:</label>
+                    <div class="telephone-container">
+                    <select name="land_telefoonnummer" id="selecter">
+                        <option value="Nederland (+31)" selected>(Nederland) +31</option>
+                        <option value="Duitsland (+49)">(Duitsland) +49</option>
+                        <option value="België (+32)">(België) +32</option>
+                        <option value="Verenigd Koninkrijk (+44)">(Verenigd Koninkrijk) +44</option>
+                    </select>
+                    <input name="telefoonnummer" type="tel" id="telephone-number">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend><span class="required">*</span>Periode en accommedatie waarvoor belangstelling</legend>
+                    <label for="start-date">Begindatum:</label>
+                    <input name="begindatum" type="date" id="start-date">
+                    <label for="end-date">Einddatum:</label>
+                    <input name="einddatum" type="date" id="end-date">
+                    <input name="nog_onbekend" type="checkbox" id="unknown" value="ja">
+                    <label for="unknown">Nog onbekend</label>
+                    <label for="accommedatie">Accommedatie:</label>
+                    <select name="accommedatie" id="accommedatie">
+                        <option value="Bungalow">Bungalow</option>
+                        <option value="Chalet"> Chalet</option>
+                        <option value="Appartement">Appartement</option>
+                    </select>
+                </fieldset>
+
+                <label for="ammount"><span class="required">*</span>Aantal personen:</label>
+                <input name="aantal personen" type="number" id="ammount" min="1" max="6">
+
+                <label for="subject"><span class="required">*</span>Onderwerp:</label>
+                <input name="onderwerp" type="text" id="subject">
+
+                <label for="text-box"><span class="required">*</span>Vraag:</label>
+                <textarea  name="vraag" rows="6" id="text-box" maxlength="400"></textarea>
+
+                <div class="btn-container">
+                    <button type="submit">Verzenden</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <script>
         let accommedatieContainer = document.getElementsByClassName("accommedatie-container")[0]
         let accommedatie = document.getElementsByClassName("accommedatie")[0];
