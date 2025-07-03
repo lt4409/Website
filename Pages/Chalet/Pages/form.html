@@ -6,6 +6,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <title>Reserveer formulier</title>
     <style>
+        :root {
+            --accent: rgb(102, 119, 97);
+        }
+
         body {
             background-color: #d7e4d1;
             margin: 0;
@@ -19,19 +23,14 @@
         }
 
         input {
-            margin-bottom: 15px;
-            padding: 5px;
             border-radius: 5px;
-            width: auto;
+            width: 100%;
             cursor: pointer;
+            accent-color: var(--accent);
         }
 
         .required {
             color: red;
-        }
-
-        #ammount {
-            width: 40px;
         }
 
         #selecter {
@@ -48,20 +47,37 @@
         }
 
         @media (min-width: 720px) {
-            .form-group {
+            fieldset {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                gap: 1rem;
             }
         }
 
         .form-group {
-     
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .form-group textarea {
+            height: auto;
+        }
+
+        .opmerkingen-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
         }
 
         .form-container {
             border-radius: 10px;
             box-sizing: border-box;
             width: 100%;
+        }
+
+        .telephone-container {
+            display: flex;
+            flex-direction: row;
         }
 
         h2 {
@@ -127,10 +143,6 @@
             align-items: center;
         }
 
-        .text-box-label {
-            margin-top: 20px;
-        }
-
         fieldset {
             margin-top: 20px;
         }
@@ -140,7 +152,8 @@
         }
 
         input:focus, select:focus, textarea:focus {
-            border-color: #3498db;
+            border: 2px solid var(--accent);
+            outline: none;
         }
 
         p {
@@ -215,6 +228,7 @@
 
         label {
             font-weight: normal;
+            text-transform: uppercase;
         }
 
         select {
@@ -261,13 +275,15 @@
                  
                     <div class="form-group telephone-number">
                         <label for="selecter"><span class="required">*</span>Telefoonnummer:</label>
-                        <select name="Land_telefoonnummer" id="selecter">
-                            <option value="Nederland (+31)" selected>+31</option>
-                            <option value="Duitsland (+49)">+49</option>
-                            <option value="België (+32)">+32</option>
-                            <option value="Verenigd Koninkrijk (+44)">+44</option>
-                        </select>
-                        <input name="telefoonnummer" type="tel" id="telephone-number" placeholder="0612345678" minlength="10" maxlength="10">
+                        <div class="telephone-container">
+                            <select name="Land_telefoonnummer" id="selecter">
+                                <option value="Nederland (+31)" selected>+31</option>
+                                <option value="Duitsland (+49)">+49</option>
+                                <option value="België (+32)">+32</option>
+                                <option value="Verenigd Koninkrijk (+44)">+44</option>
+                            </select>
+                            <input name="telefoonnummer" type="tel" id="telephone-number" placeholder="0612345678" minlength="10" maxlength="10">
+                        </div>
                     </div>
                 </fieldset>
 
@@ -359,9 +375,9 @@
                     </div>
                </fieldset>
 
-               <div class="form-group">
-                    <label class="text-box-label" for="text-box">Opmerking:</label>
-                    <textarea name="Opmerkingen" rows="6" name="text-box" id="text-box" maxlength="400"></textarea>
+               <div class="form-group opmerkingen-group">
+                    <label id="opmerkingen" for="opmerkingen">Opmerking:</label>
+                    <textarea name="opmerkingen" rows="6" id="text-box" maxlength="400"></textarea>
                 </div>
 
                 <div class="btn-container">
