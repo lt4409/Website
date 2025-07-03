@@ -22,15 +22,37 @@
         }
 
         form {
-            display: flex;
-            flex-direction: column;
             background-color: white;
-            display: flex;
             border-radius: 10px;
             box-sizing: border-box;
             padding: 40px;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
             border-top: 20px solid rgb(102, 119, 97);
+        }
+
+        @media (min-width: 720px) {
+            fieldset {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+
+        fieldset {
+            border: 2px solid #ddd; 
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .form-group textarea {
+            height: auto;
         }
 
         .title-container .form-container {
@@ -61,10 +83,14 @@
             align-items: center;
         }
 
+        .telephone-container {
+            display: flex;
+            flex-direction: row;
+        }
+
         input {
-            margin-bottom: 15px;
-            padding: 5px;
-            width: auto;
+            border-radius: 5px;
+            width: 100%;
             cursor: pointer;
             accent-color: var(--accent);
         }
@@ -72,6 +98,12 @@
         input, select, textarea {
             border: 2px solid #ccc;
             border-radius: 5px;
+            height: 1.1rem;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border: 2px solid var(--accent);
+            outline: none;
         }
 
         .required {
@@ -158,6 +190,23 @@
             flex-direction: column;
             align-items: center;
         }
+
+
+        label {
+            font-weight: normal;
+            text-transform: uppercase;
+        }
+
+        .text-box {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .selecter {
+            height: 1.5rem;
+        }
+
     </style>
 </head>
 <body>
@@ -199,13 +248,13 @@
                     <div class="form-group telephone-number">
                         <label for="selecter"><span class="required">*</span>Telefoonnummer:</label>
                         <div class="telephone-container">
-                        <select name="land_telefoonnummer" id="selecter">
-                            <option value="Nederland (+31)" selected>(Nederland) +31</option>
-                            <option value="Duitsland (+49)">(Duitsland) +49</option>
-                            <option value="België (+32)">(België) +32</option>
-                            <option value="Verenigd Koninkrijk (+44)">(Verenigd Koninkrijk) +44</option>
-                        </select>
-                        <input name="telefoonnummer" type="tel" id="telephone-number">
+                            <select name="land_telefoonnummer" class="selecter">
+                                <option value="Nederland (+31)" selected>+31</option>
+                                <option value="Duitsland (+49)">+49</option>
+                                <option value="België (+32)">+32</option>
+                                <option value="Verenigd Koninkrijk (+44)">+44</option>
+                            </select>
+                            <input name="telefoonnummer" type="tel" id="telephone-number">
                         </div>
                     </div>
                 </fieldset>
@@ -221,12 +270,12 @@
                         <input name="einddatum" type="date" id="end-date">
                     </div>
                     <div class="form-group unkown">
-                        <input name="nog_onbekend" type="checkbox" id="unknown" value="ja">
                         <label for="unknown">Nog onbekend</label>
+                        <input name="nog_onbekend" type="checkbox" id="unknown" value="ja">
                     </div>
-                    <div class="formgroup-accommedatie">
+                    <div class="form-group accommedatie">
                         <label for="accommedatie">Accommedatie:</label>
-                        <select name="accommedatie" id="accommedatie">
+                        <select name="accommedatie" id="accommedatie" class="selecter">
                             <option value="Bungalow">Bungalow</option>
                             <option value="Chalet"> Chalet</option>
                             <option value="Appartement">Appartement</option>
@@ -234,15 +283,18 @@
                     </div>
                 </fieldset>
 
-                <div class="form-group ammount">
-                    <label for="ammount"><span class="required">*</span>Aantal personen:</label>
-                    <input name="aantal personen" type="number" id="ammount" min="1" max="6">
-                </div>
-                
-                <div class="form-group subject">
-                    <label for="subject"><span class="required">*</span>Onderwerp:</label>
-                    <input name="onderwerp" type="text" id="subject">
-                </div>
+                <fieldset>
+                    <legend>Extra informatie</legend>
+                    <div class="form-group ammount">
+                        <label for="ammount"><span class="required">*</span>Aantal personen:</label>
+                        <input name="aantal personen" type="number" id="ammount" min="1" max="6">
+                    </div>
+                    
+                    <div class="form-group subject">
+                        <label for="subject"><span class="required">*</span>Onderwerp:</label>
+                        <input name="onderwerp" type="text" id="subject">
+                    </div>
+                </fieldset>
 
                 <div class="form-group text-box">
                     <label for="text-box"><span class="required">*</span>Vraag:</label>
