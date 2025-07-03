@@ -9,18 +9,13 @@
         body {
             background-color: #d7e4d1;
             margin: 0;
-            display: flex; 
-            flex-direction: column;
-            align-items: center;
             height: 100vh;
             overflow-y: auto;
             width: 100%;
             font-family: 'Poppins', sans-serif;
-        }
-
-        form {
-            display: flex;
+            display: flex; 
             flex-direction: column;
+            align-items: center;
         }
 
         input {
@@ -29,18 +24,6 @@
             border-radius: 5px;
             width: auto;
             cursor: pointer;
-        }
-
-        body {
-            background-color: #d7e4d1;
-            margin: 0;
-            display: flex; 
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            overflow-y: auto;
-            width: 100%;
-            font-family: 'Poppins', sans-serif;
         }
 
         .required {
@@ -57,13 +40,22 @@
 
         form {
             background-color: white;
-            display: flex;
             border-radius: 10px;
             box-sizing: border-box;
             padding: 40px;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
             border-top: 20px solid rgb(102, 119, 97);
+        }
 
+        @media (min-width: 720px) {
+            .form-group {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .form-group {
+     
         }
 
         .form-container {
@@ -84,11 +76,6 @@
             font-weight: bold;
         }
 
-        .telephone-container {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-        }
 
         .title-container .form-container {
             box-sizing: border-box;
@@ -222,11 +209,6 @@
             width: 100%;
         }
 
-        .personal-info {
-            display: flex;
-            flex-direction: row;
-        }
-
         option {
             width: 20%;
         }
@@ -237,110 +219,6 @@
 
         select {
             border-radius: 5px;
-        }
-
-        .personal-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            grid-template-areas: 
-            "name email-adress"
-            "telephone-number telephone-number";
-        }
-
-        .personal-info > .name {
-            grid-area: name;
-        }
-
-        .personal-info > .email-adress {
-            grid-area: email-adress;
-        }
-
-        .personal-info > .telephone-number {
-            grid-area: telephone-number;
-        }
-
-       .adress {
-            display: grid;
-            gap: 10px;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            grid-template-areas: 
-            "street housenumber"
-            "postcode plaats"
-            "land land";
-        }
-
-        .adress > .street {
-            grid-area: street;
-        } 
-        
-        .adress > .housenumber {
-            grid-area: housenumber;
-        }
-
-       .adress > .postcode {
-            grid-area: postcode;
-        }
-
-        .adress > .plaats {
-            grid-area: plaats;
-        }
-
-       .adress > .land {
-            grid-area: land;
-            margin-left: 0;
-        }
-
-        .wanted-period {
-            display: grid;
-            gap: 10px;
-            grid-template-columns: 1fr 1fr;
-            grid-template-areas: "start-date end-date";
-        }
-
-        .wanted-period > .start-date {
-            grid-area: start-date;
-        }
-
-        .wanted-period > .end-date {
-            grid-area: end-date;
-        }
-
-        .amnt-prs {
-            display: grid;
-            gap: 10px;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            grid-template-areas: 
-            "adults-above-fifty adults-under-fifty"
-            "child-till-twelve toddler-till-four"
-            "baby-till-two total"
-            ;
-        }
-
-        .amnt-prs > .adults-above-fifty {
-            grid-area: adults-above-fifty;
-        }
-
-        .amnt-prs > .adults-under-fifty {
-            grid-area: adults-under-fifty;
-        }
-
-        .amnt-prs > .child-till-twelve {
-            grid-area: child-till-twelve;
-        }
-
-        .amnt-prs > .toddler-till-four {
-            grid-area: toddler-till-four;
-        }
-
-        .amnt-prs > .baby-till-two {
-            grid-area: baby-till-two;
-        }
-
-        .amnt-prs > .total {
-            grid-area: total;
         }
         
     </style>
@@ -368,126 +246,126 @@
         </div>
         <div class="form-container">
             <form action="https://formsubmit.co/tjoaatf@gmail.com" method="POST">
-             <input type="hidden" name="_subject" value="Reservering">
-             <input type="hidden" name="_autoresponse" value="Uw formulier is verzonden. Hier is een kopie van uw antwoorden.">
-             <fieldset class="personal-info">
-                 <legend>Persoonlijke informatie</legend>
-                 <div class="name">
-                     <label for="name"><span class="required">*</span>Naam:</label>
-                     <input type="text" name="name" id="name" required>
-                 </div>
-                 <div class="email-adress">
-                     <label for="email-adress"><span class="required">*</span>Email adres:</label>
-                     <input type="email" name="email" id="email-adress" required>
-                 </div>
-                 
-                 <div class="telephone-number">
-                     <div class="telephone-container">
-                         <label for="selecter"><span class="required">*</span>Telefoonnummer:</label>
-                         <select name="Land_telefoonnummer" id="selecter">
-                             <option value="Nederland (+31)" selected>+31</option>
-                             <option value="Duitsland (+49)">+49</option>
-                             <option value="België (+32)">+32</option>
-                             <option value="Verenigd Koninkrijk (+44)">+44</option>
-                         </select>
-                         <input name="telefoonnummer" type="tel" id="telephone-number" placeholder="0612345678" minlength="10" maxlength="10">
-                     </div>
+                <input type="hidden" name="_subject" value="Reservering">
+                <input type="hidden" name="_autoresponse" value="Uw formulier is verzonden. Hier is een kopie van uw antwoorden.">
+                <fieldset class="personal-info">
+                    <legend>Persoonlijke informatie</legend>
+                    <div class="form-group name">
+                        <label for="name"><span class="required">*</span>Naam:</label>
+                        <input type="text" name="name" id="name" required>
                     </div>
-            
+                    <div class="form-group email-adress">
+                        <label for="email-adress"><span class="required">*</span>Email adres:</label>
+                        <input type="email" name="email" id="email-adress" required>
+                    </div>
+                 
+                    <div class="form-group telephone-number">
+                        <label for="selecter"><span class="required">*</span>Telefoonnummer:</label>
+                        <select name="Land_telefoonnummer" id="selecter">
+                            <option value="Nederland (+31)" selected>+31</option>
+                            <option value="Duitsland (+49)">+49</option>
+                            <option value="België (+32)">+32</option>
+                            <option value="Verenigd Koninkrijk (+44)">+44</option>
+                        </select>
+                        <input name="telefoonnummer" type="tel" id="telephone-number" placeholder="0612345678" minlength="10" maxlength="10">
+                    </div>
                 </fieldset>
 
                 <fieldset class="adress">
-                 <legend>Adres</legend>
-                 <div class="street">
-                     <label for="street"><span class="required">*</span>Straat:</label>
-                     <input name="straat" type="text" id="street" required>
-                 </div>
+                    <legend>Adres</legend>
+                    <div class="form-group street">
+                        <label for="street"><span class="required">*</span>Straat:</label>
+                        <input name="straat" type="text" id="street" required>
+                    </div>
 
-                 <div class="housenumber">
-                     <label for="ammount"><span class="required">*</span>Huisnummer:</label>
-                     <input name="huisnummer" type="text" id="ammount" min="1">
-                 </div>
+                    <div class="form-group housenumber">
+                        <label for="ammount"><span class="required">*</span>Huisnummer:</label>
+                        <input name="huisnummer" type="text" id="ammount" min="1">
+                    </div>
 
-                 <div class="postcode">
-                     <label for="postcode"><span class="required">*</span>Postcode:</label>
-                     <input name="postcode" type="text" id="postcode">
-                 </div>
+                    <div class="form-group postcode">
+                        <label for="postcode"><span class="required">*</span>Postcode:</label>
+                        <input name="postcode" type="text" id="postcode">
+                    </div>
 
-                 <div class="plaats">
-                     <label for="city"><span class="required">*</span>Plaats:</label>
-                     <input name="plaats" type="text" id="city">
-                 </div>
+                    <div class="form-group plaats">
+                        <label for="city"><span class="required">*</span>Plaats:</label>
+                        <input name="plaats" type="text" id="city">
+                    </div>
 
-                 <div class="land">
-                     <label for="country"><span class="required">*</span>Land:</label>
-                     <input name="land" type="text" id="country">
-                 </div>
+                    <div class="form-group land">
+                        <label for="country"><span class="required">*</span>Land:</label>
+                        <input name="land" type="text" id="country">
+                    </div>
                </fieldset>
 
                <fieldset class="wanted-period">
-                 <legend><span class="required">*</span>Gewenste periode en accommedatie</legend>
-                 <div class="start-date"> 
-                     <label for="start-date">Begindatum:</label>
-                     <input name="begindatum" type="date" id="start-date"required>
-                 </div>
+                    <legend><span class="required">*</span>Gewenste periode en accommedatie</legend>
+                    <div class="form-group start-date"> 
+                        <label for="start-date">Begindatum:</label>
+                        <input name="begindatum" type="date" id="start-date"required>
+                    </div>
 
-                 <div class="end-date">
-                     <label for="end-date">Einddatum:</label>
-                     <input name="einddatum" type="date" id="end-date" required>
-                 </div>
-                 <div>
-                    <label for="accommedatie">Accommedatie:</label>
-                    <select name="accommedatie" id="accommedatie">
-                        <option value="Bungalow">Bungalow</option>
-                        <option value="Chalet"> Chalet</option>
-                        <option value="Appartement">Appartement</option>
-                    </select>
-                 </div>
+                    <div class="form-group end-date">
+                        <label for="end-date">Einddatum:</label>
+                        <input name="einddatum" type="date" id="end-date" required>
+                    </div>
+                    <div class="form-group accommedatie">
+                        <label for="accommedatie">Accommedatie:</label>
+                        <select name="accommedatie" id="accommedatie">
+                            <option value="Bungalow">Bungalow</option>
+                            <option value="Chalet"> Chalet</option>
+                            <option value="Appartement">Appartement</option>
+                        </select>
+                    </div>
                </fieldset>
 
                <fieldset class="amnt-prs">
-                 <legend><span class="required">*</span>Aantal personen</legend>
+                    <legend><span class="required">*</span>Aantal personen</legend>
 
-                 <div class="adults-above-fifty">
-                     <label for="ammount">Volwassene 50+:</label>
-                     <input name="Volwassene 50+" type="number" id="adults-above-fifty" max="4" min="0">
-                 </div>
+                    <div class="form-group adults-above-fifty">
+                        <label for="ammount">Volwassene 50+:</label>
+                        <input name="Volwassene 50+" type="number" id="adults-above-fifty" max="4" min="0">
+                    </div>
 
-                 <div class="adults-under-fifty">
-                     <label for="ammount">Volwassene t/m 49:</label>
-                     <input name="Volwassenen t/m 49" type="number" id="adults-under-fifty" max="4" min="0">
-                 </div>
+                    <div class="form-group adults-under-fifty">
+                        <label for="ammount">Volwassene t/m 49:</label>
+                        <input name="Volwassenen t/m 49" type="number" id="adults-under-fifty" max="4" min="0">
+                    </div>
 
-                 <div class="child-till-twelve">
-                     <label for="ammount">Kind 5 t/m 12:</label>
-                     <input name="Kind 5 t/m 12" type="number" id="child-till-twelve" max="3" min="0">
-                 </div>
-                 <div class="child-till-eighteen">
-                    <label for="ammount">Kind 13 t/m 17:</label>
-                    <input name="Kind 13 t/m 17" type="number" id="child-till-eighteen" max="3" min="0">
-                 </div>
+                    <div class="form-group child-till-twelve">
+                        <label for="ammount">Kind 5 t/m 12:</label>
+                        <input name="Kind 5 t/m 12" type="number" id="child-till-twelve" max="3" min="0">
+                    </div>
 
-                 <div class="toddler-till-four">
-                     <label for="ammount">Peuter t/m 4:</label>
-                     <input name="Peuter t/m 4" type="number" id="toddler-till-four" max="3" min="0">
-                 </div>
+                    <div class="form-group child-till-eighteen">
+                        <label for="ammount">Kind 13 t/m 17:</label>
+                        <input name="Kind 13 t/m 17" type="number" id="child-till-eighteen" max="3" min="0">
+                    </div>
 
-                 <div class="baby-till-two">
-                     <label for="ammount">Baby t/m 2:</label>
-                     <input name="Baby t/m 2" type="number" id="baby-till-two" max="3" min="0">
-                 </div>
+                    <div class="form-group toddler-till-four">
+                        <label for="ammount">Peuter t/m 4:</label>
+                        <input name="Peuter t/m 4" type="number" id="toddler-till-four" max="3" min="0">
+                    </div>
+
+                    <div class="form-group  baby-till-two">
+                        <label for="ammount">Baby t/m 2:</label>
+                        <input name="Baby t/m 2" type="number" id="baby-till-two" max="3" min="0">
+                    </div>
                  
-                 <div class="total">
-                     <label>Totaal:</label>
-                     <input name="totaal" id="total">
-                 </div>
+                    <div class="form-group total">
+                        <label>Totaal:</label>
+                        <input name="totaal" id="total">
+                    </div>
                </fieldset>
 
-               <label class="text-box-label" for="text-box">Opmerking:</label>
-               <textarea name="Opmerkingen" rows="6" name="text-box" id="text-box" maxlength="400"></textarea>
+               <div class="form-group">
+                    <label class="text-box-label" for="text-box">Opmerking:</label>
+                    <textarea name="Opmerkingen" rows="6" name="text-box" id="text-box" maxlength="400"></textarea>
+                </div>
 
-               <div class="btn-container">
-                  <button type="submit">Verzenden</button>
+                <div class="btn-container">
+                    <button type="submit">Verzenden</button>
                 </div>
            </form>
        </div>
