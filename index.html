@@ -194,6 +194,14 @@
             border-radius: 3px 0 0 3px;
         }
 
+
+        .footer {
+            background-color: #2C2C38;
+            color: white;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
     </style>
 </head>
 <body>
@@ -219,7 +227,7 @@
     </div>
 
     <div class="grid-container">
-        <img id="Texel-vlag" src="foto's/Texel-vlag.svg" alt="Foto van de vlag van Texel. De vlag bestaat uit twee gelijke horizantale strepen waarvan de bovenste groen en de onderste zwart is.">
+        <img id="Texel-vlag" src="foto's/vuurturen-recreja.jpeg" alt="Foto van de vuurtoren van Texel met in zwarte tekst 'recreja' geschreven">
         <img id="Texel-kaart" src="foto's/Texel-kaart.jpeg" alt="Foto van Texel waar met een rode stip aangegeven is waar de accommodaties zich bevinden op het eiland.">
         <div id="fotos-huisjes">
             <a class="mySlides1"><img src="foto's/bungalow.jpeg" alt="Foto bungalow en de bijbehorende tuin." ></a>
@@ -245,6 +253,17 @@
             <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
         </div>
+    </div>
+    <div class="footer">
+        <section>
+            <ul>
+                <li>Contact</li>
+                <hr>
+                <li>Mail: info@recreja.nl</li>
+                <li>Facebook: <a href="https://www.facebook.com/people/Recreja-Texel/100063347102947/">@Recreja_texel</a></li>
+                <li>Instagram: <a href="https://www.instagram.com/recrejatexel/">@recrejatexel</a></li>
+            </ul>
+        </section>
     </div>
     <script>
         let accommedatieContainer = document.getElementsByClassName("accommedatie-container")[0]
