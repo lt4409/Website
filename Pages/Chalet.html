@@ -36,6 +36,7 @@
         }
 
         .title-container {
+            grid-area: 1/2/2/3;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -91,7 +92,7 @@
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 3fr 1fr;
-            grid-template-rows: 1fr 1fr 0.5fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
             justify-items: stretch;
             gap: 2rem;
             padding: 2rem;
@@ -110,15 +111,15 @@
         }
 
         #beschikbaarheid {
-            grid-area: 1/1/2/2;
-        }
-
-        #prijzen {
             grid-area: 2/1/3/2;
         }
 
+        #prijzen {
+            grid-area: 3/1/4/2;
+        }
+
         #foto-container {
-            grid-area: 1/2/3/3;
+            grid-area: 2/2/4/3;
             position: relative;
             height: 30rem;
             width: 100%;
@@ -151,11 +152,11 @@
         }
 
         #reserveren {
-            grid-area: 1/3/2/4;
+            grid-area: 2/3/3/4;
         }
 
         #informatie-aanvraag {
-            grid-area: 2/3/3/4;
+            grid-area: 3/3/4/4;
         } 
         
         .prev, .next {
@@ -210,9 +211,16 @@
         }
 
         #beschrijvings-container {
-            grid-area: 3/2/4/3;
+            grid-area: 4/2/5/3;
             display: flex;
             flex-direction: column;
+            align-items: center;
+        }
+
+        #pet-container {
+            grid-area: 1/1/2/2;
+            display: flex;
+            justify-content: center;
             align-items: center;
         }
 
@@ -227,11 +235,15 @@
         <a href="Chalet/Pages/algemeneinfo.html">Algemene informatie</a>
     </div>
 
-    <div class="title-container">
-        <h1>4p Chalet, De Krim</h1>
-    </div>
+
 
     <div class="grid-container">
+        <div id="pet-container">
+            <h2>Huisdiervrij!</h2>
+        </div>
+        <div class="title-container">
+            <h1>4p Chalet, De Krim</h1>
+        </div>
         <div id="beschikbaarheid" class="button-container">
             <div class="button">
                 <a href="Chalet/Pages/beschikbaarheid.html">Beschikbaarheid</a>
