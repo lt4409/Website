@@ -44,11 +44,26 @@
         }
 
         .accommedaties {
-            display: none;
+            display: block;
         } 
 
         .underheader {
             width: 100%;
+            background-color: #313138;
+            display: none;
+            position: absolute;
+            top: 100%;
+            z-index: 10;
+            left: 0; 
+        }
+
+        .dropdown-wrapper {
+            position: relative;
+        }
+
+        .accommedatie-container:hover .underheader {
+            display: block;
+            position: relative;
         }
 
         a {
@@ -221,21 +236,22 @@
 </head>
 <body>
     <div class="menubalk">
-        <div class="accommedatie-container">
-            <a class="accommedatie">Accommedaties</a>
-            <div class="underheader">
-                <ul class="accommedaties">
-                    <li>Appartement</li>
-                    <li>Bungalow</li>
-                    <li><a href="Pages/Chalet.html">Chalet</a></li>
-                </ul>
+        <div class="dropdown-container">
+            <div class="accommedatie-container">
+                <a class="accommedatie">Accommedaties</a>
+                <div class="underheader">
+                    <ul class="accommedaties">
+                        <li>Appartement</li>
+                        <li>Bungalow</li>
+                        <li><a href="Pages/Chalet.html">Chalet</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <a href="Pages/Meer_over_recreja.html">Meer over Recreja</a>
         <a href="Pages/Veel_gestelde_vragen.html">Veel gestelde vragen</a>
         <a href="Pages/Texel_informatie.html">Texel informatie</a>
     </div>
-
     <div id="title">
         <h1>Recreja Texel</h1>
         <hr>
@@ -281,19 +297,6 @@
         </section>
     </div>
     <script>
-        let accommedatieContainer = document.getElementsByClassName("accommedatie-container")[0]
-        let accommedatie = document.getElementsByClassName("accommedatie")[0];
-        let accommedaties = document.getElementsByClassName("accommedaties")[0];
-
-        accommedatieContainer.addEventListener('mouseover', () => {
-            accommedaties.style.display = "block";
-        })
-
-        accommedatieContainer.addEventListener('mouseout', () => {
-            accommedaties.style.display = "none";
-        })
-
-
         let slideIndex = [1, 1];
         let slideId = ["mySlides1", "mySlides2"];
         let slideTimers = [null, null];
