@@ -35,6 +35,22 @@
             font-size: 1.5rem;
         }
 
+        ::-webkit-scrollbar {
+        width: 13px;
+        }
+
+        ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        }
+        
+        ::-webkit-scrollbar-thumb {
+        background: #888; 
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+        }
+
         .title-container {
             grid-area: 1/2/2/3;
             display: flex;
@@ -47,7 +63,7 @@
             font-family: 'Poppins', 'sans-serif';
             margin: 0;
             padding: 0;
-            font-size: 80px;
+            font-size: 60px;
         }
 
         .button-container {
@@ -222,6 +238,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            font-style: italic;
+            text-decoration: underline;
+        }
+
+        span {
+            font-weight: 900;
         }
 
     </style>
@@ -243,6 +265,8 @@
         </div>
         <div class="title-container">
             <h1>4p Chalet, De Krim</h1>
+            <p>Net en gezellig chalet op vakantiepark De Krim nabij <span>De Cocksdorp</span>. Ingericht in Texel stijl met woonkamer met open keuken. Het heeft 2 slaapkamers waarvan 1 met een tweepersoonsbed en 1 met 2 losse bedden. Badkamer met douche, wastafel en toilet. Schuifdeuren naar de tuin met zeer zonnig gelegen terras. Schuur / berging. Parkeerplaats op eigen terrein.</p>
+
         </div>
         <div id="beschikbaarheid" class="button-container">
             <div class="button">
