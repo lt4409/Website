@@ -43,17 +43,10 @@
         }
 
         h1 {
-            font-size: 80px;
-        }
-
-        h2 {
-            font-size: 40px;
-        }
-
-        h1, h2 {
             font-family: 'Poppins', 'sans-serif';
             margin: 0;
             padding: 0;
+            font-size: 80px;
         }
 
         .button-container {
@@ -98,7 +91,7 @@
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 3fr 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 0.5fr;
             justify-items: stretch;
             gap: 2rem;
             padding: 2rem;
@@ -216,6 +209,13 @@
             text-decoration: none;
         }
 
+        #beschrijvings-container {
+            grid-area: 3/2/4/3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
     </style>
 </head>
 <body>
@@ -271,11 +271,12 @@
                 <i class="fa fa-info" style="margin-right: 10px;"></i>
             </a>  
         </div>
+        <div id="beschrijvings-container">
+            <h3>4p Chalet - Texel, De Cockdorp, Vakantiepark De Krim</h3>
+            <p>Net en gezellig chalet in Texel stijl met woonkamer met open keuken. Het heeft 2 slaapkamers waarvan 1 met een tweepersoonsbed en 1 met 2 losse bedden. Badkamer met douche, wastafel en toilet. Schuifdeuren naar de tuin met zeer zonnig gelegen terras. Schuur / berging. Parkeerplaats op eigen terrein.</p>
+        </div>
     </div>
-    <div class="beschrijvings-container">
-        <h3>4p Chalet - Texel, De Cockdorp, Vakantiepark De Krim</h3>
-        <p> Net en gezellig chalet in Texel stijl met woonkamer met open keuken. Het heeft 2 slaapkamers waarvan 1 met een tweepersoonsbed en 1 met 2 losse bedden. Badkamer met douche, wastafel en toilet. Schuifdeuren naar de tuin met zeer zonnig gelegen terras. Schuur / berging. Parkeerplaats op eigen terrein.</p>
-    </div>
+
     <div>
         <video src="Chalet/Pages/foto's/tour-chalet.mp4" controls autoplay width="320" height="240"></video>
     </div>
