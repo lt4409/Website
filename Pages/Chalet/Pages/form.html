@@ -345,10 +345,9 @@
                     <div class="form-group accommedatie">
                         <label for="accommedatie">Accommedatie:</label>
                         <select name="accommedatie" id="accommedatie" required>
-                            <option value="Bungalow">Bungalow</option>
-                            <option value="Chalet"> Chalet</option>
-                            <option value="Appartement">Appartement</option>
-                            <option value="Nog onbekend">Nog onbekend</option>
+                            <option id="bungalow" value="Bungalow">Bungalow</option>
+                            <option id="chalet" value="Chalet"> Chalet</option>
+                            <option id="appartement" value="Appartement">Appartement</option>
                         </select>
                     </div>
                </fieldset>
@@ -415,7 +414,7 @@
         accommedatieContainer.addEventListener('mouseout', () => {
             accommedaties.style.display = "none";
         })
-
+        
         const adultsAboveFiftyInput = document.querySelector("#adults-above-fifty");
         const adultsUnderFiftyInput = document.querySelector("#adults-under-fifty");
         const childTillEighteenInput = document.querySelector("#child-till-eighteen");
@@ -437,12 +436,58 @@
             totalScreen.value = total;
         }
 
-        adultsAboveFiftyInput.addEventListener("input", calculateTotal);
-        adultsUnderFiftyInput.addEventListener("input", calculateTotal);
-        childTillEighteenInput.addEventListener("input", calculateTotal);
-        childTillTwelveInput.addEventListener("input", calculateTotal);
-        toddlerTillFourInput.addEventListener("input", calculateTotal);
-        babyTillTwoInput.addEventListener("input", calculateTotal);
+        [
+            adultsAboveFiftyInput,
+            adultsUnderFiftyInput,
+            childTillEighteenInput,
+            childTillTwelveInput,
+            toddlerTillFourInput,
+            babyTillTwoInput
+        ].forEach(input => {
+            input.addEventListener("input", () => {
+                calculateTotal();
+                determineAccommedation();
+            });
+        });
+
+
+        function determineAccommedation() {
+            calculateTotal();
+            const total = parseInt(totalScreen.value);
+            const selected = document.getElementById("accommedatie").value;
+
+            if (selected === "Bungalow") {
+                if (total > 6) {
+                    alert("De bungalow heeft een limiet van 6 personen.");
+                }
+            }
+            else if (selected === "Chalet") {
+                if (total > 4) {
+                    alert("Het chalet heeft een limiet van 4 personen.");
+                }
+            }
+            else if (selected === "Appartement") {
+                if (total > 2) {
+                    alert("Het appartement heeft een limiet van twee personen.")
+                }
+            }  
+        }
+
+        document.getElementById("accommedatie").addEventListener("change", determineAccommedation);
+
+        const form = document.querySelector("form");
+
+        form.addEventListener("submit", function (event) {
+            calculateTotal();
+            const total = parseInt(totalScreen.value);
+            const selected = document.getElementById("accommedatie").value;
+            if ((selected === "Bungalow" && total > 6) ||
+                (selected === "Chalet" && total > 4) ||
+                (selected === "Appartement" && total > 2)) {
+                alert("Het aantal personen overschrijdt de limiet voor de geselecteerde accommodatie.");
+                event.preventDefault();
+            }
+        })
     </script>
 </body>
 </html>
