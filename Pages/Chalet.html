@@ -108,7 +108,7 @@
         .grid-container {
             display: grid;
             grid-template-columns: 1fr 3fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
             justify-items: stretch;
             gap: 2rem;
             padding: 2rem;
@@ -226,13 +226,6 @@
             text-decoration: none;
         }
 
-        #beschrijvings-container {
-            grid-area: 4/2/5/3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
         #pet-container {
             grid-area: 1/1/2/2;
             display: flex;
@@ -240,6 +233,10 @@
             align-items: center;
             font-style: italic;
             text-decoration: underline;
+        }
+
+        #video-container {
+            grid-area: 1/3/2/4;
         }
 
         span {
@@ -263,10 +260,12 @@
         <div id="pet-container">
             <h2>Huisdiervrij!</h2>
         </div>
-        <div class="title-container">
+        <div id="title-container">
             <h1>4p Chalet, De Krim</h1>
             <p>Net en gezellig chalet op vakantiepark De Krim nabij <span>De Cocksdorp</span>. Ingericht in Texel stijl met woonkamer met open keuken. Het heeft 2 slaapkamers waarvan 1 met een tweepersoonsbed en 1 met 2 losse bedden. Badkamer met douche, wastafel en toilet. Schuifdeuren naar de tuin met zeer zonnig gelegen terras. Schuur / berging. Parkeerplaats op eigen terrein.</p>
-
+        </div>
+        <div class="video-container">
+            <video src="Chalet/Pages/foto's/tour-chalet.mp4" controls autoplay width="100%" height="100%"></video>
         </div>
         <div id="beschikbaarheid" class="button-container">
             <div class="button">
@@ -307,14 +306,6 @@
                 <i class="fa fa-info" style="margin-right: 10px;"></i>
             </a>  
         </div>
-        <div id="beschrijvings-container">
-            <h3>4p Chalet - Texel, De Cockdorp, Vakantiepark De Krim</h3>
-            <p>Net en gezellig chalet in Texel stijl met woonkamer met open keuken. Het heeft 2 slaapkamers waarvan 1 met een tweepersoonsbed en 1 met 2 losse bedden. Badkamer met douche, wastafel en toilet. Schuifdeuren naar de tuin met zeer zonnig gelegen terras. Schuur / berging. Parkeerplaats op eigen terrein.</p>
-        </div>
-    </div>
-
-    <div>
-        <video src="Chalet/Pages/foto's/tour-chalet.mp4" controls autoplay width="320" height="240"></video>
     </div>
     <div class="footer">
         <section>
