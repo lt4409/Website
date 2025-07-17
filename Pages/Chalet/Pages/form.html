@@ -387,8 +387,9 @@
                  
                     <div class="form-group total">
                         <label>Totaal:</label>
-                        <input name="totaal" id="total">
+                        <input name="totaal" id="total" readonly>
                     </div>
+                    <p id="capacity-warning" style="color: red; display: none;"></p>
                </fieldset>
 
                <div class="form-group opmerkingen-group">
@@ -450,28 +451,32 @@
             });
         });
 
+        const warning = document.getElementById("capacity-warning");
+
+        function showWarning(message) {
+            warning.textContent = message;
+            warning.style.display = "block";
+        }
+
+        function hideWarning() {
+            warning.style.display = "none";
+        }
 
         function determineAccommedation() {
-            calculateTotal();
             const total = parseInt(totalScreen.value);
             const selected = document.getElementById("accommedatie").value;
+            hideWarning()
 
-            if (selected === "Bungalow") {
-                if (total > 6) {
-                    alert("De bungalow heeft een limiet van 6 personen.");
-                }
+            if (selected === "Bungalow" && total >6) {
+                showWarning("De bungalow heeft een limiet van zes personen.");
             }
-            else if (selected === "Chalet") {
-                if (total > 4) {
-                    alert("Het chalet heeft een limiet van 4 personen.");
-                }
+            else if (selected === "Chalet" && total > 4) {
+                showWarning("Het chalet heeft een limiet van vier personen.");
             }
-            else if (selected === "Appartement") {
-                if (total > 2) {
-                    alert("Het appartement heeft een limiet van twee personen.")
-                }
-            }  
-        }
+            else if (selected === "Appartement" && total > 2) {
+                showWarning("Het appartement heeft een limiet van twee personen.");
+            }
+        }  
 
         document.getElementById("accommedatie").addEventListener("change", determineAccommedation);
 
