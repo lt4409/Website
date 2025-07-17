@@ -489,7 +489,7 @@
             if ((selected === "Bungalow" && total > 6) ||
                 (selected === "Chalet" && total > 4) ||
                 (selected === "Appartement" && total > 2)) {
-                alert("Het aantal personen overschrijdt de limiet voor de geselecteerde accommodatie.");
+                showWarning("Het aantal personen overschrijdt de limiet voor de geselecteerde accommodatie.");
                 event.preventDefault();
             }
         })
