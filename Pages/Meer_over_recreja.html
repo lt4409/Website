@@ -11,19 +11,7 @@
             font-family: 'Poppins', 'sans-serif';
         }
 
-        .header {
-            width: 100%;
-            background-color: #2C2C38;
-            color: white;
-            padding-top: 40px;
-            padding-bottom: 3px;
-            position: -webkit-sticky;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-         ::-webkit-scrollbar {
+        ::-webkit-scrollbar {
         width: 13px;
         }
 
@@ -38,13 +26,40 @@
         ::-webkit-scrollbar-thumb:hover {
         background: #555; 
         }
+
+        .header {
+            width: 100%;
+            background-color: #2C2C38;
+            color: white;
+            padding-top: 40px;
+            padding-bottom: 3px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .way-back {
+            text-align: left;
+            font-size: 17px;
+            padding-left: 15px;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+        }
+
+        .way-back > a {
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <div class="way-back">
             <a href="../index.html">Home</a> 
-            </div>
         </div>
     </div>
     
